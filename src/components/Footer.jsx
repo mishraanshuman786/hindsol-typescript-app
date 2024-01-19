@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 
 function Footer() {
@@ -12,11 +13,10 @@ function Footer() {
                 className="h-[150px] me-3"
                 alt="FlowBite Logo"
               />
-             
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
+          <div>
               <h2 className="mb-6 text-lg font-semibold text-blue-600 uppercase ">
                 Resources
               </h2>
@@ -79,8 +79,8 @@ function Footer() {
           </div>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-white sm:text-center">
+        <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between">
+          <span className="text-sm text-white sm:text-center mb-4 sm:mb-0 sm:mr-4">
             © 2023{" "}
             <a href="https://flowbite.com/" className="hover:underline">
               Flowbite™
@@ -88,7 +88,7 @@ function Footer() {
             . All Rights Reserved.
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
-            <a
+          <a
               href="#"
               className="text-white hover:text-gray-900 dark:hover:text-white"
             >
