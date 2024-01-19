@@ -1,0 +1,27 @@
+.navbarComponent {
+  width: 100%;
+   z-index: 20;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.navContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navContainer li {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.navButton {
+  background-color: #0e1292;
+  width: 141px;
+  height: 40px;
+  color: beige;
+  font-size: 20px;
+}
