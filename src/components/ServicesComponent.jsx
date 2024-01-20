@@ -125,22 +125,20 @@ let arr = [
     color: 'bg-orange-600',
   }
 ];
-
-
 function ServicesComponent() {
   return (
-    <div className='gap-4 px-8 mb-4 grid grid-cols-4 grid-rows-6'>
+    <div className='gap-4 px-8 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
       {arr.map((element, index) => {
         let image = `/images/${index}.png`;
-       
+
         return (
           <div
             key={index}
-            className={` ${styles.containerHover} h-[200px] relative bg-blue overflow-hidden ${element.color} `}
+            className={` ${styles.containerHover} h-[200px] relative bg-blue overflow-hidden ${element.color} mb-4 md:mb-0`}
           >
-            <div className='z-10 w-[60%] ml-2 text-white  absolute'>
-              <h1 className='text-[25px] font-bold'>{element.heading}</h1>
-              <h4>{element.para}</h4>
+            <div className='z-10 w-full md:w-[60%] ml-2 text-white absolute bottom-0'>
+              <h1 className='text-[20px] md:text-[25px] font-bold'>{element.heading}</h1>
+              <h4 className='text-sm md:text-base'>{element.para}</h4>
             </div>
 
             <img
@@ -148,7 +146,7 @@ function ServicesComponent() {
               alt={element.heading}
               width={120}
               height={120}
-              className={`${styles.imageHover} mt-[65px] ml-[152px] `}
+              className={`${styles.imageHover} absolute bottom-0 right-0 mb-[10px] mr-[10px] md:mr-[20px] md:mb-[20px]`}
             />
           </div>
         );
