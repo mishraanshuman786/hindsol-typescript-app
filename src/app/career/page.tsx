@@ -1,11 +1,8 @@
 import React from 'react'
 
-function Career
-() {
+function Career() {
   return (
-    <div>Career
-
-    </div>
+    <div>page</div>
   )
 }
 
