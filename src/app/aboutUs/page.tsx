@@ -1,9 +1,14 @@
 import React from 'react';
+import Navbar from '@/components/Navbar';
 
-function AbountUs() {
+function AboutUs() {
   return (
-    <div>Abount Us</div>
+    <div>
+      <Navbar/>
+      Abount Us
+
+    </div>
   )
 }
 
-export default AbountUs;
+export default AboutUs;

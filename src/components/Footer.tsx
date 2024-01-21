@@ -81,9 +81,9 @@ function Footer() {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between">
           <span className="text-sm text-white sm:text-center mb-4 sm:mb-0 sm:mr-4">
-            © 2023{" "}
+            © 2024{" "}
             <a href="https://flowbite.com/" className="hover:underline">
-              Flowbite™
+             HINDSOL™ SOFTWARE DEVELOPMENT 
             </a>
             . All Rights Reserved.
           </span>

@@ -1,8 +1,14 @@
+"use client"
+import Navbar from '@/components/Navbar';
 import React from 'react'
 
 function Career() {
   return (
-    <div>page</div>
+    <div>
+      {/* Navbar */}
+      <Navbar/>
+      page
+    </div>
   )
 }
 

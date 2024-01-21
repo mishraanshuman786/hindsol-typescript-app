@@ -4,8 +4,6 @@ import ServicesComponent from "@/components/ServicesComponent";
 import OurServices from "@/components/OurServices";
 import OurPortfolio from "@/components/OurPortfolio";
 import DiscussProject from "@/components/DiscussProject";
-import Footer from "../components/Footer";
-
 
 export default function Home() {
   return (
@@ -17,14 +15,11 @@ export default function Home() {
         Our Offerings for your Distinct Requirements!
       </h1>
 
-      <ServicesComponent/>
-      <OurServices/>
-      <OurPortfolio/>
-      <DiscussProject/>
-      <br/>
-      {/* footer for the page */}
-      <Footer />
-      
+      <ServicesComponent />
+      <OurServices />
+      <OurPortfolio />
+      <DiscussProject />
+      <br />
     </div>
   );
 }

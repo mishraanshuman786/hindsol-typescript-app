@@ -1,12 +1,12 @@
 "use client";
-import styles from "./styles/HomeBanner.module.css";
 import Navbar from "../components/Navbar";
+import styles from "./styles/HomeBanner.module.css";
+
 
 const HomeBanner = () => {
   return (
     <div className={styles.mainContainer}>
-      
-      <Navbar />
+         <Navbar/>
       <div className={styles.homeBanner}>
         {/* left content */}
         <div className={styles.leftContent}>
