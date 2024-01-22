@@ -1,11 +1,32 @@
-import React from "react";
+"use client"
+import React,{useState,useEffect} from "react";
 import Navbar from "@/components/Navbar";
+import Pulsating from "@/components/Pulsating";
 const AboutUsPage = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a delay to demonstrate the loading animation
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust the duration as needed
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+
   return (
     <div className="min-h-screen ">
       <Navbar />
+       
+       {/* Pulsating div for loading animation */}
+       {
+        (loading && (<Pulsating/>))
+       }
+       {/* pulsating end */}
 
-      <section className="container mx-auto ">
+      <section className={`container mx-auto ${loading ? "hidden" : ""}`}>
         <div className="outline-none  flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:h-[600px] md:pr-8 mb-8 flex items-center justify-center relative">
             <img
@@ -41,7 +62,7 @@ const AboutUsPage = () => {
         </div>
       </section>
 
-      <section className="container mx-auto mt-8">
+      <section className={`container mx-auto ${loading ? "hidden" : ""}`}>
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:pr-8 order-2 md:order-1 mb-8">
             <h2 className="text-2xl md:text-[32px] font-semibold mb-4">Our Mission</h2>

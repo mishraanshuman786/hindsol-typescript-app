@@ -1,15 +1,35 @@
 "use client"
 import Navbar from '../../components/Navbar';
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import Pulsating from '@/components/Pulsating';
 
 const ContactUs = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a delay to demonstrate the loading animation
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust the duration as needed
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div className="font-sans min-h-screen">
       {/* Navigation */}
       <Navbar />
+
+        {/* Pulsating div for loading animation */}
+        {
+        (loading && (<Pulsating/>))
+       }
+       {/* pulsating end */}
+
       
       {/* Contact Form */}
-      <div className="flex flex-col md:flex-row relative">
+      <div className={`flex flex-col md:flex-row ${loading ? "hidden" : ""} relative`}>
 
         {/* Contact Image */}
         <img
