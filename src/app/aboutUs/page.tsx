@@ -26,7 +26,7 @@ const AboutUsPage = () => {
        }
        {/* pulsating end */}
 
-      <section className={`container p-1 mx-auto ${loading ? "hidden" : ""}`}>
+      <section className={`container pl-2 mx-auto ${loading ? "hidden" : ""}`}>
         <div className="outline-none  flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 md:h-[600px] md:pr-8 mb-8 flex items-center justify-center relative">
             <img
