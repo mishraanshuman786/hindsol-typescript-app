@@ -1,9 +1,9 @@
 "use client"
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Pulsating from "@/components/Pulsating";
-const AboutUsPage = () => {
 
+const AboutUsPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,28 +15,25 @@ const AboutUsPage = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       <Navbar />
-       
-       {/* Pulsating div for loading animation */}
-       {
-        (loading && (<Pulsating/>))
-       }
-       {/* pulsating end */}
 
-      <section className={`container pl-2 mx-auto ${loading ? "hidden" : ""}`}>
+      {/* Pulsating div for loading animation */}
+      {loading && <Pulsating />}
+      {/* pulsating end */}
+
+      <section className={`container mx-auto px-4 ${loading ? "hidden" : ""}`}>
         <div className="outline-none  flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 md:h-[600px] md:pr-8 mb-8 flex items-center justify-center relative">
+          <div className="md:w-full md:pr-8 mb-8 relative">
             <img
-              className="w-full h-auto "
+              className="w-full h-auto"
               src="/images/about1.webp"
               alt="about us"
             />
 
             <a
-              className="opacity-0"
+              className="opacity-0 block mt-2 text-sm text-gray-500"
               href="https://www.vecteezy.com/video/28549623-people-are-standing-on-a-ladder-and-holding-a-clipboard"
             >
               people are standing on a ladder and holding a clipboard Stock
@@ -44,12 +41,12 @@ const AboutUsPage = () => {
             </a>
           </div>
 
-          <div className="md:w-1/2">
-            <h2 className="text-2xl md:text-[32px] font-semibold mb-4">
+          <div className="md:w-full">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
               Our Story
             </h2>
-            <hr className="md:border md:border-gray-600" />
-            <p className="text-gray-700 md:text-[25px]">
+            <hr className="border-t-2 border-gray-300 mb-4" />
+            <p className="text-gray-700 text-base md:text-lg">
               Welcome to Hindsole Softwares Private Limited, where innovation
               meets passion. Our journey began in 2018 with a vision to make a
               software company to provide the software solutions to our
@@ -62,23 +59,25 @@ const AboutUsPage = () => {
         </div>
       </section>
 
-      <section className={`container mx-auto ${loading ? "hidden" : ""}`}>
+      <section className={`container mx-auto px-4 ${loading ? "hidden" : ""}`}>
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 md:pr-8 order-2 md:order-1 mb-8">
-            <h2 className="text-2xl md:text-[32px] font-semibold mb-4">Our Mission</h2>
-            <hr className="md:border md:border-gray-600" />
-            <p className="text-gray-700 md:text-[25px]">
-              At Hindsol, we are on a mission to provide customers a effective
+          <div className="md:w-full md:pr-8 mb-8">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+              Our Mission
+            </h2>
+            <hr className="border-t-2 border-gray-300 mb-4" />
+            <p className="text-gray-700 text-base md:text-lg">
+              At Hindsol, we are on a mission to provide customers an effective
               and efficient software solution to boost their business growth. We
-              believe in runing with time to enhance our technology stack to
-              provide the products to the customers according to their changing
-              needs and requirement from time to time. Together, we aim to make
-              a positive impact on the software industry to fullfill the
-              evolving needs of our customers.
+              believe in running with time to enhance our technology stack and
+              provide products to customers according to their changing needs
+              and requirements. Together, we aim to make a positive impact on
+              the software industry to fulfill the evolving needs of our
+              customers.
             </p>
           </div>
 
-          <div className="md:w-1/2 order-1 md:order-2">
+          <div className="md:w-full">
             <img
               src="/images/about3.jpg"
               alt="Mission Image"
