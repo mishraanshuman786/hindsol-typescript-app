@@ -47,8 +47,8 @@ const AboutUsPage = () => {
             </h2>
             <hr className="border-t-2 border-gray-300 mb-4" />
             <p className="text-gray-700 text-base md:text-lg">
-              Welcome to Hindsole Softwares Private Limited, where innovation
-              meets passion. Our journey began in 2018 with a vision to make a
+              Welcome to <strong> Hindsol Software Private Limited</strong>, where innovation
+              meets passion. Our journey began in <strong>2020</strong> with a vision to make a
               software company to provide the software solutions to our
               customers like website development and software development to
               make their life easy. Over the years, we have grown into a
@@ -67,7 +67,7 @@ const AboutUsPage = () => {
             </h2>
             <hr className="border-t-2 border-gray-300 mb-4" />
             <p className="text-gray-700 text-base md:text-lg">
-              At Hindsol, we are on a mission to provide customers an effective
+              At <strong>Hindsol</strong>, we are on a mission to provide customers an effective
               and efficient software solution to boost their business growth. We
               believe in running with time to enhance our technology stack and
               provide products to customers according to their changing needs
