@@ -1,5 +1,5 @@
 import "./globals.css";
-import HomeBanner from "@/components/HomeBanner";
+import HomeBanner from "@/components/HomepageSlider";
 import ServicesComponent from "@/components/ServicesComponent";
 import OurServices from "@/components/OurServices";
 import OurPortfolio from "@/components/OurPortfolio";

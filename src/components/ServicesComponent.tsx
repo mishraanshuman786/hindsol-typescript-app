@@ -136,7 +136,7 @@ function ServicesComponent() {
             key={index}
             className={` ${styles.containerHover} h-[200px] relative bg-blue overflow-hidden ${element.color} mb-4 md:mb-0`}
           >
-            <div className='z-10 w-full md:w-[60%] ml-2 text-white absolute bottom-0'>
+            <div className='z-10  md:w-[80%] ml-2 text-white absolute top-0'>
               <h1 className='text-[20px] md:text-[25px] font-bold'>{element.heading}</h1>
               <h4 className='text-sm md:text-base'>{element.para}</h4>
             </div>
