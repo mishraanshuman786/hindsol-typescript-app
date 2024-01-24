@@ -11,7 +11,7 @@ export default function Home() {
       {/* Header */}
       <HomeBanner />
       {/* Section para */}
-      <h1 className="text-[40px] text-center my-[80px]">
+      <h1 className="text-[40px] text-blue-900 font-semibold text-center mt-[80px] mb-5">
         Our Offerings for your Distinct Requirements!
       </h1>
 
