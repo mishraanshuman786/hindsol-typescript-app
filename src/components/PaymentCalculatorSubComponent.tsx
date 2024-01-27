@@ -183,7 +183,7 @@ function PaymentCalculatorSubComponent() {
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
           <FaTools className="text-[40px] mx-auto" />
-              <h3>Custom</h3>
+              <h3>CUSTOM</h3>
             </div>
           </div>
         </div>
