@@ -7,6 +7,7 @@ import { LuTruck } from "react-icons/lu";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
 import { GiGraduateCap } from "react-icons/gi";
 import { FaTools } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 
 function PaymentCalculatorSubComponent() {
@@ -106,7 +107,7 @@ function PaymentCalculatorSubComponent() {
       {/* second row */}
       <div>
         <h3 className="text-[30px] mt-10 text-center font-semibold text-blue-800">
-         App Field
+         Users And Accounts
         </h3>
         <div>
         <div className="flex border border-black">
@@ -122,7 +123,7 @@ function PaymentCalculatorSubComponent() {
               ) : null}
              
               <FiShoppingCart className="mx-auto text-[40px]" /> 
-              <h3>E-Commerce</h3>
+              <h3>E-Mail and Password Sign Up</h3>
             </div>
           </div>
           <div
@@ -136,7 +137,7 @@ function PaymentCalculatorSubComponent() {
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
             <LuTruck className='mx-auto text-[40px]' />
-              <h3>Logistics</h3>
+              <h3>Facebook Signup</h3>
             </div>
           </div>
         </div>
@@ -154,7 +155,7 @@ function PaymentCalculatorSubComponent() {
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
             <MdOutlineHealthAndSafety className="mx-auto text-[40px]" />
-              <h3> Healthcare</h3>
+              <h3>Google Signup</h3>
             </div>
           </div>
           <div
@@ -169,7 +170,7 @@ function PaymentCalculatorSubComponent() {
               ) : null}
              <GiGraduateCap className="mx-auto text-[40px]"/>
 
-              <h3>Education</h3>
+              <h3>Multilanguage System</h3>
             </div>
           </div>
           <div
@@ -182,8 +183,8 @@ function PaymentCalculatorSubComponent() {
               {isAndroidClicked ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
-          <FaTools className="text-[40px] mx-auto" />
-              <h3>CUSTOM</h3>
+          <SiGmail className="mx-auto text-[40px]" />
+              <h3>User Invitation Emails</h3>
             </div>
           </div>
         </div>
