@@ -7,6 +7,7 @@ import { FaCode } from "react-icons/fa";
 import { BsFileBarGraphFill } from "react-icons/bs";
 import CareerPageSlider from "@/components/CareerPageSlider";
 import { motion } from "framer-motion";
+import CareerRegistrationForm from "@/components/CareerRegistrationForm";
 
 function Career() {
   const [loading, setLoading] = useState(true);
@@ -130,6 +131,8 @@ function Career() {
         </header>
         <section>
          <CareerPageSlider />
+         <hr className="border-gray-900 border-[2px] mx-10"/>
+       <CareerRegistrationForm/>
         </section>
       </div>
     </div>

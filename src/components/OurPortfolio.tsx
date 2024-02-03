@@ -44,11 +44,11 @@ export function OurPortfolio() {
               }`}
               onMouseEnter={() => {
                 setIsHovered(true);
-                setImage("/slider-images/slider-image4.jpeg");
+                setImage("/homepage-image-animation/image0.avif");
               }}
               onMouseLeave={() => {
                 setIsHovered(false);
-                setImage("/slider-images/slider-image3.jpeg");
+                setImage("/homepage-image-animation/slider-image3.jpeg");
               }}
             >
               {/* {element} {index + 1} */}

@@ -17,7 +17,7 @@ export function OurServices() {
         {/* First Sub Container */}
         <div className="w-full md:w-[400px] grid grid-rows-3">
           <div>
-            <h1 className="font-bold text-xl md:text-2xl">
+            <h1 className="font-bold text-blue-500 text-xl md:text-2xl">
               Web Application Development
             </h1>
             <p>
@@ -26,7 +26,7 @@ export function OurServices() {
             </p>
           </div>
           <div>
-            <h1 className="font-bold text-xl md:text-2xl">
+            <h1 className="font-bold text-xl text-blue-500 md:text-2xl">
               Chat Bot Development
             </h1>
             <p>
@@ -35,7 +35,7 @@ export function OurServices() {
             </p>
           </div>
           <div>
-            <h1 className="font-bold text-xl md:text-2xl">Mobility Solutions</h1>
+            <h1 className="font-bold text-xl text-blue-500 md:text-2xl">Mobility Solutions</h1>
             <p>
               Your idea is priceless and has the power to bring a change. It&lsquo;s
               high time you develop it into a million-dollar app.
@@ -44,14 +44,14 @@ export function OurServices() {
         </div>
 
         {/* Second Sub Container */}
-        <div className="w-full md:w-[400px]">
-          <h1 className="text-center">Center div</h1>
+        <div className="w-full md:w-[400px] ">
+          <img src="/homepagegif.gif" width="100%" height="100%" alt="homepagegif" />
         </div>
 
         {/* Third Sub Container */}
-        <div className="w-full md:w-[400px] grid grid-rows-3">
+        <div className="w-full md:w-[400px]  grid grid-rows-3">
           <div>
-            <h1 className="font-bold text-xl md:text-2xl">
+            <h1 className="font-bold text-blue-500 text-xl md:text-2xl">
               Performance Marketing
             </h1>
             <p>
@@ -60,14 +60,14 @@ export function OurServices() {
             </p>
           </div>
           <div>
-            <h1 className="font-bold text-xl md:text-2xl">AR/VR Development</h1>
+            <h1 className="font-bold text-xl text-blue-500 md:text-2xl">AR/VR Development</h1>
             <p>
               Step into the tech-terrain of Augmented and Virtual Reality today
               and already leave your competitors behind.
             </p>
           </div>
           <div>
-            <h1 className="font-bold text-xl md:text-2xl">
+            <h1 className="font-bold text-xl text-blue-500 md:text-2xl">
               Salesforce Development
             </h1>
             <p>

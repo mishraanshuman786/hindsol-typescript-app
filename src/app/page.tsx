@@ -4,7 +4,7 @@ import ServicesComponent from "@/components/ServicesComponent";
 import OurServices from "@/components/OurServices";
 import OurPortfolio from "@/components/OurPortfolio";
 import DiscussProject from "@/components/DiscussProject";
-import CareerPageSlider from "@/components/CareerPageSlider";
+
 
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
       <OurServices />
       <OurPortfolio />
       <DiscussProject />
-      <CareerPageSlider/>
+     
       
       
       <br />

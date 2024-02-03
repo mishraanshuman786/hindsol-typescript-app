@@ -1,5 +1,5 @@
-"use client";
-import React, { useState } from "react";
+"use client"
+import React, { useState, useEffect } from "react";
 import styles from "./styles/CareerPageSlider.module.css"; // Import CSS module for styling
 
 const CareerPageSlider = () => {
@@ -12,6 +12,13 @@ const CareerPageSlider = () => {
   const handleNextClick = () => {
     setCurrentScreen((prevScreen) => (prevScreen % 2) + 1);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentScreen((prevScreen) => (prevScreen % 2) + 1);
+    },3000 ); // Change 5000 to the desired delay in milliseconds
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
@@ -32,20 +39,20 @@ const CareerPageSlider = () => {
                   <img
                     width="100%"
                     height="100%"
-                    src="https://plus.unsplash.com/premium_photo-1705352059805-6bd7aaf090db?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Image 4"
                   />
                 </div>
                 <div className="overflow-hidden flex flex-col gap-2">
                   <div className=" h-[280px] overflow-hidden rounded-xl">
                     <img
-                      src="https://images.unsplash.com/photo-1706766008345-c92c0195d7ef?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1525373698358-041e3a460346?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Image 5"
                     />
                   </div>
                   <div className="overflow-hidden mb-2 rounded-xl">
                     <img
-                      src="https://plus.unsplash.com/premium_photo-1706727288514-d82077d21cf4?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1452830978618-d6feae7d0ffa?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Image 5"
                     />
                   </div>
@@ -77,20 +84,20 @@ const CareerPageSlider = () => {
                   <img
                     width="100%"
                     height="100%"
-                    src="https://plus.unsplash.com/premium_photo-1705352059805-6bd7aaf090db?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://images.unsplash.com/photo-1520583457224-aee11bad5112?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Image 4"
                   />
                 </div>
                 <div className="overflow-hidden flex flex-col gap-2">
                   <div className=" h-[280px] overflow-hidden rounded-xl">
                     <img
-                      src="https://images.unsplash.com/photo-1706766008345-c92c0195d7ef?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1526572195979-0f8a7ea44489?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Image 5"
                     />
                   </div>
                   <div className="overflow-hidden mb-2 rounded-xl">
                     <img
-                      src="https://plus.unsplash.com/premium_photo-1706727288514-d82077d21cf4?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1651169610763-fddf392fadb4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Image 5"
                     />
                   </div>
@@ -100,7 +107,7 @@ const CareerPageSlider = () => {
                   <img
                     width="100%"
                     height="100%"
-                    src="https://plus.unsplash.com/premium_photo-1678718711951-e1add4d05f59?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://images.unsplash.com/photo-1706550634123-ad2aa217ede8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Image 6"
                   />
                 </div>
