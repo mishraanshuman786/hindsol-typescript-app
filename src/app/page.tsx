@@ -4,12 +4,14 @@ import ServicesComponent from "@/components/ServicesComponent";
 import OurServices from "@/components/OurServices";
 import OurPortfolio from "@/components/OurPortfolio";
 import DiscussProject from "@/components/DiscussProject";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 
 
 export default function Home() {
   return (
-    <div>
+    <div style={{backgroundImage:" linear-gradient(60deg, #abecd6 0%, #fbed96 100%)"}}>
       {/* Header */}
       <HomeBanner />
       {/* Section para */}
@@ -21,10 +23,10 @@ export default function Home() {
       <OurServices />
       <OurPortfolio />
       <DiscussProject />
-     
-      
-      
-      <br />
+     {/* Footer */}
+     <div className="mt-10">
+     <Footer/>
+     </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from "react";
 
 export function OurServices() {
   return (
-    <div className="p-4 md:p-8">
+    <div className="p-4 md:p-8 bg-white">
       <div className="text-[40px] md:text-4xl text-center font-semibold text-blue-900 my-8">
         Our Services
       </div>
