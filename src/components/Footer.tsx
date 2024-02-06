@@ -5,8 +5,8 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="bg-blue-950 text-white block">
-      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <footer>
+      <div className="mx-auto bg-blue-950 w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link href="https://flowbite.com/" className="flex items-center">
@@ -20,53 +20,85 @@ function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
             <div>
               <h2 className="mb-6 text-lg font-semibold text-blue-600 uppercase ">
-                Resources
+                Company
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
                   <Link
-                    href="https://flowbite.com/"
+                    href="/aboutUs"
                     className="hover:underline"
                   >
-                    Flowbite
+                   About Us
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link
-                    href="https://tailwindcss.com/"
+                    href="/contactUs"
                     className="hover:underline"
                   >
-                    Tailwind CSS
+                    Contact Us
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link
+                    href="/career"
+                    className="hover:underline"
+                  >
+                   Career
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link
+                    href="/SkillDev"
+                    className="hover:underline"
+                  >
+                 SkillDev
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
               <h2 className="mb-6 text-lg font-semibold text-blue-600 uppercase dark:text-white">
-                Follow us
+               SERVICES
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
                   <Link
-                    href="https://github.com/themesberg/flowbite"
+                    href="#"
                     className="hover:underline "
                   >
-                    Github
+                    Info. Tech.
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link
-                    href="https://discord.gg/4eeurUVvTy"
+                    href="#"
                     className="hover:underline"
                   >
-                    Discord
+                   Legal
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link
+                    href="#"
+                    className="hover:underline"
+                  >
+                  Inventory
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link
+                    href=""
+                    className="hover:underline"
+                  >
+                   Training
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
               <h2 className="mb-6 text-lg font-semibold text-blue-600 uppercase dark:text-white">
-                Legal
+                POLICIES
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
@@ -74,9 +106,19 @@ function Footer() {
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
+                <li className="mb-4">
                   <Link href="#" className="hover:underline">
                     Terms &amp; Conditions
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link href="#" className="hover:underline">
+                    Refund Policy
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link href="#" className="hover:underline">
+                    FAQ
                   </Link>
                 </li>
               </ul>
@@ -86,11 +128,11 @@ function Footer() {
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between">
           <span className="text-sm text-white sm:text-center mb-4 sm:mb-0 sm:mr-4">
-            © 2024{" "}
+            {" "}
             <Link href="https://flowbite.com/" className="hover:underline">
-              HINDSOL™ SOFTWARE DEVELOPMENT
+              HINDSOL SOFTWARE PVT. LTD.
             </Link>
-            . All Rights Reserved.
+                  All Rights Reserved.
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <Link

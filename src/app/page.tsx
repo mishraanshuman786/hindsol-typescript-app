@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div style={{backgroundImage:" linear-gradient(60deg, #abecd6 0%, #fbed96 100%)"}}>
+    <div>
       {/* Header */}
       <HomeBanner />
       {/* Section para */}

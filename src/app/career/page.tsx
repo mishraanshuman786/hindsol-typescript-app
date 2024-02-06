@@ -52,19 +52,19 @@ function Career() {
             transition={{ type: "spring", stiffness: 50, delay: 2.4 }}
             className="h-[400px] w-[80%]  rounded-xl absolute top-[350px] bg-white"
           >
-            <h1 className="text-[30px] text-center mt-14 font-medium ">
+            <h1 className="text-[22px] md:text-[25px] lg:text-[30px] text-center mt-14 font-medium ">
               View Open positions in these departments
             </h1>
 
             {/* all options main div */}
-            <div className="flex w-[90%] px-[8%] justify-between gap-12 mt-[60px] mx-auto flex-wrap ">
+            <div className="grid  grid-cols-2 sm:grid-cols-3 xl:grid-cols-4  w-[90%]  px-[8%] justify-between gap-12 mt-[60px] mx-auto flex-wrap ">
               {/* option div 1*/}
               <div className="flex flex-col items-center w-[130px]">
                 {/* image div  */}
                 <div className="flex justify-center rounded-lg items-center w-[70px] h-[70px] border border-violet-800">
                   <RiComputerLine className="text-[30px] text-violet-800" />
                 </div>
-                <h3 className="text-center text-[12px] font-bold">IT</h3>
+                <h3 className="text-center text-[12px] font-bold">Front End</h3>
               </div>
               {/* option div 2*/}
               <div className="flex flex-col items-center w-[130px]">
@@ -72,7 +72,7 @@ function Career() {
                 <div className="flex justify-center rounded-lg items-center w-[70px] h-[70px] border border-blue-600">
                   <FaCode className="text-[30px] text-blue-600" />
                 </div>
-                <h3 className="text-center text-[12px] font-bold">Product</h3>
+                <h3 className="text-center text-[12px] font-bold">Back End</h3>
               </div>
               {/* option div 3*/}
               <div className="flex flex-col items-center w-[130px]">
@@ -80,7 +80,7 @@ function Career() {
                 <div className="flex justify-center rounded-lg items-center w-[70px] h-[70px] border border-green-800">
                   <RiComputerLine className="text-[30px] text-green-800" />
                 </div>
-                <h3 className="text-center text-[12px] font-bold">Sales</h3>
+                <h3 className="text-center text-[12px] font-bold">DBA</h3>
               </div>
               {/* option div 4*/}
               <div className="flex flex-col items-center w-[130px]">
@@ -88,7 +88,7 @@ function Career() {
                 <div className="flex justify-center rounded-lg items-center w-[70px] h-[70px] border border-yellow-600">
                   <RiComputerLine className="text-[30px] text-orange-700" />
                 </div>
-                <h3 className="text-center text-[12px] font-bold">Marketing</h3>
+                <h3 className="text-center text-[12px] font-bold">Graphic Designer</h3>
               </div>
               {/* option div 5*/}
               <div className="flex flex-col items-center w-[130px] ">
@@ -104,7 +104,7 @@ function Career() {
                 <div className="flex justify-center rounded-lg items-center w-[70px] h-[70px] border border-violet-500">
                   <RiComputerLine className="text-[30px] text-violet-800" />
                 </div>
-                <h3 className="text-center text-[12px] font-bold">Finance</h3>
+                <h3 className="text-center text-[12px] font-bold">UI/UX</h3>
               </div>
               {/* option div 7*/}
               <div className="flex flex-col items-center w-[130px]">
@@ -113,7 +113,7 @@ function Career() {
                   <RiComputerLine className="text-[30px] text-blue-600" />
                 </div>
                 <h3 className="text-center text-[12px] font-bold">
-                  Operations
+                 SCRUM Master
                 </h3>
               </div>
               {/* option div 8*/}

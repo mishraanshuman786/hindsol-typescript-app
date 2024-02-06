@@ -14,7 +14,7 @@ export default function Layout({ children }) {
   }, []);
 
   return (
-    <div style={{backgroundImage:" linear-gradient(60deg, #abecd6 0%, #fbed96 100%)"}}>
+    <div>
       {children}
       {/* Render the footer only when showFooter is true */}
       {showFooter && <Footer />}
