@@ -23,8 +23,8 @@ const AboutUsPage = () => {
       {/* Pulsating div for loading animation */}
       {loading && <Pulsating />}
       {/* pulsating end */}
-
-      <section className={`container mx-auto px-4 ${loading ? "hidden" : ""}`}>
+       <div className={`${loading ? "hidden" : ""}`}>
+      <section className="container mx-auto px-4 ">
         <div className="outline-none flex flex-col md:flex-row items-center">
           <div className="md:w-full md:pr-8 mb-8 relative">
             <img
@@ -86,10 +86,11 @@ const AboutUsPage = () => {
             />
           </div>
         </div>
-        {/* footer */}
-        <Footer/>
+       
       </section>
-     
+       {/* footer */}
+       <Footer/>
+      </div>
       
     </div>
   );

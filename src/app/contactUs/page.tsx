@@ -28,9 +28,9 @@ const ContactUs = () => {
        }
        {/* pulsating end */}
 
-      
+      <div className={`${loading ? "hidden" : ""}`}>
       {/* Contact Form */}
-      <div className={`flex flex-col md:flex-row ${loading ? "hidden" : ""} relative`}>
+      <div className="flex flex-col md:flex-row  relative">
 
         {/* Contact Image */}
         <img
@@ -89,8 +89,10 @@ const ContactUs = () => {
 
           </form>
         </div>
-        {/* footer */}
-        <Footer/>  
+         
+      </div>
+      {/* footer */}
+      <Footer/> 
       </div>
         
     </div>
