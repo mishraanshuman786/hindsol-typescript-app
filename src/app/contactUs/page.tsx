@@ -89,8 +89,10 @@ const ContactUs = () => {
 
           </form>
         </div>
+        {/* footer */}
+        <Footer/>  
       </div>
-      <Footer/>      
+        
     </div>
   );
 };

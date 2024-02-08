@@ -86,8 +86,10 @@ const AboutUsPage = () => {
             />
           </div>
         </div>
+        {/* footer */}
+        <Footer/>
       </section>
-      <Footer/>
+     
       
     </div>
   );
