@@ -4,8 +4,8 @@ import ServicesComponent from "@/components/ServicesComponent";
 import OurServices from "@/components/OurServices";
 import OurPortfolio from "@/components/OurPortfolio";
 import DiscussProject from "@/components/DiscussProject";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FAQs from "@/components/FAQs";
 
 
 
@@ -20,11 +20,16 @@ export default function Home() {
       </h1>
 
       <ServicesComponent />
+      <hr className="border border-gray-900 mx-10 mt-10"/>
       <OurServices />
+      <hr className="border border-gray-900 mx-10"/>
       <OurPortfolio />
+      <hr className="border border-gray-900 mx-10 mt-10"/>
+      <FAQs/>
+      <hr className="border border-gray-900 mx-10"/>
       <DiscussProject />
      {/* Footer */}
-     <div className="mt-10">
+     <div className="mt-10 ">
      <Footer/>
      </div>
     </div>

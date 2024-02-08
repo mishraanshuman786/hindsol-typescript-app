@@ -22,7 +22,7 @@ export function OurPortfolio() {
 
   return (
     <div>
-      <div className="text-[40px] text-blue-900 font-semibold text-center mt-[100px] mb-5 pt-[40px] pb-[20px]">
+      <div className="text-[40px] text-blue-900 font-semibold text-center mt-[20px] mb-5 pt-[40px] pb-[20px]">
         Our Portfoilo
       </div>
       <div className="text-lg text-center pb-[20px]">

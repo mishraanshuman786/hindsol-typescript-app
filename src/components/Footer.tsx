@@ -6,12 +6,12 @@ import Link from "next/link";
 function Footer() {
   return (
     <footer>
-      <div className="mx-auto bg-blue-950 w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <div className="mx-auto bg-blue-950 w-[100%]  p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link href="https://flowbite.com/" className="flex items-center">
+            <Link href="https://hindsol.com/" className="flex items-center">
               <img
-                src="logo.png"
+                src="/logo.png"
                 className="h-[150px] me-3"
                 alt="FlowBite Logo"
               />
@@ -102,22 +102,22 @@ function Footer() {
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
-                  <Link href="#" className="hover:underline">
+                  <Link href="/policies/privacyPolicy" className="hover:underline">
                     Privacy Policy
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="#" className="hover:underline">
+                  <Link href="/policies/termsAndConditions" className="hover:underline">
                     Terms &amp; Conditions
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="#" className="hover:underline">
+                  <Link href="/policies/refundPolicy" className="hover:underline">
                     Refund Policy
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="#" className="hover:underline">
+                  <Link href="/#FAQs" className="hover:underline">
                     FAQ
                   </Link>
                 </li>
