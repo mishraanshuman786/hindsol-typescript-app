@@ -4,7 +4,7 @@ import React,{useState,useEffect} from "react";
 import { motion } from "framer-motion";
 import Pulsating from "@/components/Pulsating";
 import Footer from "@/components/Footer";
-import CareerRegistrationhtmlhtmlForm from "@/components/CareerRegistrationForm";
+import SkillDevRegistrationForm from "@/components/SkillDevRegistrationForm";
 
 function SkillDev() {
 
@@ -30,7 +30,7 @@ function SkillDev() {
       {/* pulsating end */}
 
       {/*The Content of the Career Page */}
-      <div className={`container mb-20 mx-auto ${loading ? "hidden" : ""}`}>
+      <div className={`container mx-auto ${loading ? "hidden" : ""}`}>
     <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -61,25 +61,25 @@ function SkillDev() {
                 <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                   <div className="box-border flex relative flex-row shrink-0 gap-2.5 mt-5">
                     <img
-                      src="https://images.unsplash.com/photo-1426024120108-99cc76989c71?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjEyfHxmcmVlJTIwd2ViJTIwZGV2ZWxvcG1lbnQlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D"
+                      src="https://plus.unsplash.com/premium_photo-1683749810427-9f460939f702?q=80&w=1315&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       loading="lazy"
                       alt="first"
                       className="box-border object-cover overflow-hidden shrink-0 mx-auto mt-5 rounded-xl aspect-[0.98] max-w-[272px] min-h-[20px] min-w-[20px] size-full"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjA1fHxmcmVlJTIwd2ViJTIwZGV2ZWxvcG1lbnQlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D"
+                      src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       loading="lazy"
                       className="box-border object-cover overflow-hidden shrink-0 mt-5 w-6/12 h-full rounded-xl aspect-[100] min-h-[20px] min-w-[20px]"
                     />
                   </div>
                   <div className="box-border flex relative flex-row shrink-0 gap-2.5 mt-5 h-3/6">
                     <img
-                      src="https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1613479205646-c0dc1ee8511f?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       loading="lazy"
                       className="box-border object-cover overflow-hidden shrink-0 mt-5 w-6/12 h-full rounded-xl aspect-[100] min-h-[20px] min-w-[20px]"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjE5fHxmcmVlJTIwd2ViJTIwZGV2ZWxvcG1lbnQlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D"
+                      src="https://logisticinfotech.com/wp-content/uploads/2015/04/Mobile-App-Development.jpg"
                       loading="lazy"
                       className="box-border object-cover overflow-hidden shrink-0 mt-5 w-6/12 h-full rounded-xl aspect-[1.5] min-h-[20px] min-w-[20px]"
                     />
@@ -91,7 +91,7 @@ function SkillDev() {
         </div>
       </section>
     </motion.div>
-    <CareerRegistrationhtmlhtmlForm/>
+    <SkillDevRegistrationForm/>
     {/* Footer */}
     <Footer/>
     </div>

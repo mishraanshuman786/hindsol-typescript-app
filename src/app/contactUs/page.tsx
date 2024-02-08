@@ -2,6 +2,7 @@
 import Navbar from '../../components/Navbar';
 import React,{useState,useEffect} from 'react';
 import Pulsating from '@/components/Pulsating';
+import Footer from '@/components/Footer';
 
 const ContactUs = () => {
 
@@ -89,6 +90,7 @@ const ContactUs = () => {
           </form>
         </div>
       </div>
+      <Footer/>      
     </div>
   );
 };
