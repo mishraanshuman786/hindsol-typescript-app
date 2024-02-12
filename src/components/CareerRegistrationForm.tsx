@@ -100,12 +100,13 @@ function CareerRegistrationForm() {
         </h4>
       </div>
       {/* Registration Form */}
+      <div className="container px-5 md:px-20">
       <div
         style={{
           backgroundImage:
             "linear-gradient(to right, #fa709a 0%, #fee140 100%)",
         }}
-        className="mx-20  rounded-lg shadow-md p-6 mt-6 md:mx-64 my-10"
+        className="rounded-lg mx-auto shadow-md  mt-6 p-6  my-10"
       >
         <h2 className="text-xl md:text-2xl mb-4 font-semibold text-center">
           Apply Now
@@ -260,6 +261,7 @@ function CareerRegistrationForm() {
             Clear Form
           </button>
         </form>
+      </div>
       </div>
     </div>
   );

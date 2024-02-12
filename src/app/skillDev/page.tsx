@@ -92,9 +92,14 @@ function SkillDev() {
       </section>
     </motion.div>
     <SkillDevRegistrationForm/>
-    {/* Footer */}
-    <Footer/>
+   
     </div>
+    {
+      (!loading)?(
+         <Footer/>
+      ):null
+    }
+    
   
     </div>
     

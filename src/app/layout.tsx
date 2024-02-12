@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { FaInstagramSquare } from "react-icons/fa";
+import { MdFacebook } from "react-icons/md";
+import { RiWhatsappFill } from "react-icons/ri";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {/* Fixed horizontal div */}
+        <div className="fixedSidebar bg-blue-700">
+          {/* Links to social media platforms */}
+          <a href="https://www.facebook.com/hindsolsoftware/" target="_blank" rel="noopener noreferrer">
+          <MdFacebook className="text-[60px] text-white" />
+          </a>
+          <a href="https://www.instagram.com/hindsolsoftware/" target="_blank" rel="noopener noreferrer">
+          <FaInstagramSquare className="text-[60px] text-white" />
+          </a>
+          <a href="https://www.whatsapp.com/hindsol" target="_blank" rel="noopener noreferrer">
+          <RiWhatsappFill className="text-[60px] text-white"/>
+          </a>
+          {/* Add more social media links/icons as needed */}
+        </div>
+        {/* Main content */}
+        {children}
+      </body>
     </html>
   );
 }

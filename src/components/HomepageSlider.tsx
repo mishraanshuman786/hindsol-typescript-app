@@ -15,11 +15,11 @@ function HomepageSlider() {
         data-carousel="slide"
       >
         {/* <!-- Carousel wrapper --> */}
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-[480px] ">
+        <div className="relative h-56 overflow-hidden rounded-lg md:h-[550px] ">
           {/* <!-- Item 1 --> */}
           <div className="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-              src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/slider-images/homepageSlider1.svg"
               className="absolute  block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
               alt="..."
             />
@@ -27,7 +27,7 @@ function HomepageSlider() {
           {/* <!-- Item 2 --> */}
           <div className="hidden duration-700 ease-in-out" data-carousel-item>
             <img
-              src="https://images.unsplash.com/photo-1549082984-1323b94df9a6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/slider-images/homepageSlider2.svg"
               // className="absolute block w-full -translate-x-1/2 -translate-y-1/2  left-1/2 top-12"
               alt="..."
             />
