@@ -32,32 +32,7 @@ function HomepageSlider() {
               alt="..."
             />
           </div>
-          {/* <!-- Item 3 --> */}
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src="/slider-images/slider-image3.jpeg"
-              width="100%"
-              height='480px'
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          {/* <!-- Item 4 --> */}
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          {/* <!-- Item 5 --> */}
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src="https://images.unsplash.com/photo-1659079631735-2228a7ce943e?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
+         
         </div>
         {/* <!-- Slider indicators --> */}
         <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
@@ -75,27 +50,7 @@ function HomepageSlider() {
             aria-label="Slide 2"
             data-carousel-slide-to="1"
           ></button>
-          <button
-            type="button"
-            className="w-3 h-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 3"
-            data-carousel-slide-to="2"
-          ></button>
-          <button
-            type="button"
-            className="w-3 h-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 4"
-            data-carousel-slide-to="3"
-          ></button>
-          <button
-            type="button"
-            className="w-3 h-3 rounded-full"
-            aria-current="false"
-            aria-label="Slide 5"
-            data-carousel-slide-to="4"
-          ></button>
+         
         </div>
         {/* <!-- Slider controls --> */}
         <button
