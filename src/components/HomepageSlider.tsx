@@ -19,11 +19,11 @@ function HomepageSlider() {
           {/* <!-- Item 1 --> */}
           <div  className="bg-blue-950   duration-700 h-full w-full ease-in-out" data-carousel-item>
             {/* desktop */}
-             <div className="hidden border border-black md:flex justify-center items-center mx-auto w-[60%] ">
-                  <h1 className="text-[30px]  text-center text-white ">
+             <div className="hidden  md:flex h-[300px] w-[80%] mx-auto mt-10  md:items-center md:justify-center ">
+                  <h1 className="text-[30px] w-[50%]    text-center text-white ">
                   Transforming Ideas into Intelligent Solutions. Welcome to Hindsol!
                   </h1>
-                  <img src="/slider-images/mobile.png" />
+                  <img src="/slider-images/mobile.png" className=" w-[260px] " />
              </div>
              {/* mobile */}
              <div className="flex md:hidden">
