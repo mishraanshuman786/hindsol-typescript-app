@@ -20,7 +20,7 @@ function HomepageSlider() {
           <div  className="bg-blue-950   duration-700 h-full w-full ease-in-out" data-carousel-item>
             {/* desktop */}
              <div className="hidden border border-black md:flex justify-center items-center mx-auto w-[60%] ">
-                  <h1 className="text-[50px] py-15 text-center text-white ">
+                  <h1 className="text-[30px]  text-center text-white ">
                   Transforming Ideas into Intelligent Solutions. Welcome to Hindsol!
                   </h1>
                   <img src="/slider-images/mobile.png" />
