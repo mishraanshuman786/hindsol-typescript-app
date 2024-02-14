@@ -15,22 +15,28 @@ function HomepageSlider() {
         data-carousel="slide"
       >
         {/* <!-- Carousel wrapper --> */}
-        <div className="relative h-56 border border-black  overflow-hidden  rounded-lg md:h-[540px] ">
+        <div className="relative h-56   overflow-hidden  rounded-lg md:h-[500px] ">
           {/* <!-- Item 1 --> */}
-          <div className="hidden duration-700 h-auto  ease-in-out" data-carousel-item>
-            <img
-              src="/slider-images/homepageSlider1.svg"
-              className="absolute  block w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
-              alt="..."
-            />
+          <div  className="bg-blue-950   duration-700 h-full w-full ease-in-out" data-carousel-item>
+            {/* desktop */}
+             <div className="hidden md:flex mx-auto w-[60%] ">
+                  <h1 className="text-[50px] py-24 text-center text-white ">
+                  Transforming Ideas into Intelligent Solutions. Welcome to Hindsol!
+                  </h1>
+                  <img src="/slider-images/mobile.png" />
+             </div>
+             {/* mobile */}
+             <div className="flex md:hidden">
+             <h1 className="text-[18px] py-14 text-center text-white ">
+                  Transforming Ideas into Intelligent Solutions. Welcome to Hindsol!
+                  </h1>
+                  <img src="/slider-images/mobile.png" className="w-[220px] h-[200px]" />
+             </div>
+            
           </div>
           {/* <!-- Item 2 --> */}
           <div className="hidden duration-700  h-full ease-in-out" data-carousel-item>
-          <img
-              src="/slider-images/homepageSlider2.svg"
-              className="absolute  block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
-              alt="..."
-            />
+         
           </div>
          
         </div>
