@@ -20,7 +20,7 @@ function HomepageSlider() {
           <div className="hidden duration-700 h-full  ease-in-out" data-carousel-item>
             <img
               src="/slider-images/homepageSlider1.svg"
-              className="absolute  block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
+              className="absolute  block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
               alt="..."
             />
           </div>
@@ -28,7 +28,7 @@ function HomepageSlider() {
           <div className="hidden duration-700  h-full ease-in-out" data-carousel-item>
           <img
               src="/slider-images/homepageSlider2.svg"
-              className="absolute  block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
+              className="absolute  block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
               alt="..."
             />
           </div>
