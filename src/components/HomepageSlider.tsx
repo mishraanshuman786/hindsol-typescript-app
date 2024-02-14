@@ -15,7 +15,7 @@ function HomepageSlider() {
         data-carousel="slide"
       >
         {/* <!-- Carousel wrapper --> */}
-        <div className="relative h-44  overflow-hidden  rounded-lg md:h-[540px] ">
+        <div className="relative h-56 border border-black  overflow-hidden  rounded-lg md:h-[540px] ">
           {/* <!-- Item 1 --> */}
           <div className="hidden duration-700 h-full  ease-in-out" data-carousel-item>
             <img
