@@ -35,8 +35,22 @@ function HomepageSlider() {
             
           </div>
           {/* <!-- Item 2 --> */}
-          <div className="hidden duration-700  h-full ease-in-out" data-carousel-item>
-         
+          <div  className="bg-blue-950   duration-700 h-full w-full ease-in-out" data-carousel-item>
+            {/* desktop */}
+             <div className="hidden  md:flex h-[300px] w-[80%] mx-auto mt-10  md:items-center md:justify-center ">
+                  <h1 className="text-[30px] w-[50%]    text-center text-white ">
+                  Want to make your online presence shine brighter than a shooting star? Let Hindsol illuminate your website with our expert development services!
+                  </h1>
+                  <img src="/slider-images/mobile.png" className=" w-[260px] " />
+             </div>
+             {/* mobile */}
+             <div className="flex md:hidden">
+             <h1 className="text-[18px] py-14 text-center text-white ">
+             Want to make your online presence shine brighter than a shooting star? Let Hindsol illuminate your website with our expert development services!
+                  </h1>
+                  <img src="/slider-images/image2.png" className="w-[220px] h-[200px]" />
+             </div>
+            
           </div>
          
         </div>
