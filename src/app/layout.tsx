@@ -22,16 +22,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* Fixed horizontal div */}
-        <div className="fixedSidebar bg-blue-700">
+        <div className="fixedSidebar">
           {/* Links to social media platforms */}
           <a href="https://www.facebook.com/hindsolsoftware/" target="_blank" rel="noopener noreferrer">
-          <MdFacebook className="text-[60px] text-white" />
+            <img src="/assets/facebook.png" />
           </a>
           <a href="https://www.instagram.com/hindsolsoftware/" target="_blank" rel="noopener noreferrer">
-          <FaInstagramSquare className="text-[60px] text-white" />
+          <img src="/assets/instagram.png" />
           </a>
           <a href="https://www.whatsapp.com/hindsol" target="_blank" rel="noopener noreferrer">
-          <RiWhatsappFill className="text-[60px] text-white"/>
+          <img src="/assets/whatsapp.png" />
           </a>
           {/* Add more social media links/icons as needed */}
         </div>
