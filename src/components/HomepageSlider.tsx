@@ -17,10 +17,10 @@ function HomepageSlider() {
         {/* <!-- Carousel wrapper --> */}
         <div className="relative h-56 border border-black  overflow-hidden  rounded-lg md:h-[540px] ">
           {/* <!-- Item 1 --> */}
-          <div className="hidden duration-700 h-full  ease-in-out" data-carousel-item>
+          <div className="hidden duration-700 h-auto  ease-in-out" data-carousel-item>
             <img
               src="/slider-images/homepageSlider1.svg"
-              className="absolute  block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
+              className="absolute  block w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
               alt="..."
             />
           </div>
