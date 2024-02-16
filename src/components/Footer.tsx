@@ -49,7 +49,7 @@ function Footer() {
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="/register#Register"
+                    href="/skillDev"
                     className="hover:underline"
                   >
                  SkillDev

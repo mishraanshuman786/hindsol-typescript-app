@@ -78,7 +78,7 @@ function SkillDev() {
         </div>
       </section>
     </motion.div>
-    <div id="Register"></div>
+    <div id="2708"></div>
     <SkillDevRegistrationForm  />
    
     </div>
