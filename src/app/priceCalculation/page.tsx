@@ -12,6 +12,7 @@ import { DiHtml53DEffects } from "react-icons/di";
 import { TbDeviceImacCode } from "react-icons/tb";
 import { FaCheckSquare } from "react-icons/fa";
 import PaymentCalculatorSubComponent from "@/components/PaymentCalculatorSubComponent";
+import FAQs from "@/components/FAQs";
 
 function PriceCalculation() {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -58,16 +59,16 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
         </div>
         <div>
           <div>
-            <div className="flex  justify-center m-0">
+            <div className="flex  justify-center m-0 ">
               {/* desktop switch */}
               <div
                 onClick={() => setIsDesktop(true)}
                 className={`flex items-center mr-2   font-semibold ${
-                  isDesktop ? "underline text-blue-900" : "text-gray-900"
+                  isDesktop ? " text-blue-900" : "text-gray-900"
                 }`}
               >
                 <FaLaptopCode className="text-[40px]  mb-0" />
-                <h1 className="text-[40px] hover:text-blue-900">WEB</h1>
+                <h1 className="text-[40px] hover:text-blue-900  ">WEB</h1>
               </div>
               {/* mobile switch */}
               <div
@@ -82,7 +83,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                 <h1 className="text-[40px] hover:text-blue-900">MOBILE</h1>
               </div>
             </div>
-            <hr className="border-gray-400 border-2 m-[-13px] " />
+            <hr className="border-gray-400 border-2 mt-[-13px] mx-[13px] " />
           </div>
 
           {/* main content div */}
@@ -235,7 +236,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
             </div>
             {/* right div */}
             <div className="w-[35%] ">
-              <div className="bg-blue-800 w-[90%] pt-4 h-[500px] my-10 text-white rounded mx-auto">
+              <div className="bg-blue-800 sticky top-0  w-[90%] pt-4 h-[100vh] my-10 text-white rounded mx-auto">
                 {/* first div */}
                 <div className="border border-white mx-4 bg-blue-600  rounded">
                   <div className="flex justify-between">
@@ -285,6 +286,9 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
           </div>
         </div>
       </header>
+      <section>
+        <FAQs/>
+      </section>
     </div>
   );
 }

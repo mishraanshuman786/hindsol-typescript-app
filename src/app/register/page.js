@@ -8,16 +8,6 @@ import SkillDevRegistrationForm from "@/components/SkillDevRegistrationForm";
 
 function SkillDev() {
 
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate a delay to demonstrate the loading animation
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Adjust the duration as needed
-
-    return () => clearTimeout(timeout);
-  }, []);
 
 
   return (
@@ -25,16 +15,13 @@ function SkillDev() {
       {/* Navbar component */}
       <Navbar/>
 
-         {/* Pulsating div for loading animation */}
-         {loading && <Pulsating />}
-      {/* pulsating end */}
 
       {/*The Content of the Career Page */}
-      <div className={`container mx-auto ${loading ? "hidden" : ""}`}>
+      <div className={`container mx-auto `}>
     <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 50, delay: 2.4 }} className="box-border flex flex-col shrink-0 px-5  w-screen text-black bg-white min-h-[530px] ml-[calc(50%_-_50vw)] max-sm:pb-10">
+            transition={{ type: "spring", stiffness: 50, delay: 1.2}} className="box-border flex flex-col shrink-0 px-5  w-screen text-black bg-white min-h-[530px] ml-[calc(50%_-_50vw)] max-sm:pb-10">
       <section className="box-border flex flex-col grow shrink-0 self-stretch px-5   mx-auto mb-10 w-full text-black bg-white max-w-[1200px] min-h-[530px] max-sm:pb-10">
         <div className="box-border flex relative flex-col shrink-0  min-h-[391px]">
           <section className="box-border flex relative flex-col grow shrink-0 self-stretch px-5 mx-auto w-full max-w-[1200px] min-h-[391px]">
@@ -91,14 +78,13 @@ function SkillDev() {
         </div>
       </section>
     </motion.div>
+    <div id="Register"></div>
     <SkillDevRegistrationForm  />
    
     </div>
-    {
-      (!loading)?(
+   
          <Footer/>
-      ):null
-    }
+   
     
   
     </div>
