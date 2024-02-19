@@ -68,7 +68,7 @@ function CareerRegistrationForm() {
     }
 
     try {
-      const response = await fetch("/api/career/careerSavingForm", {
+      const response = await fetch("/api/it/career/careerSavingForm", {
         method: "POST",
         body: formDataToSend, // No need to stringify FormData
       });
@@ -80,6 +80,15 @@ function CareerRegistrationForm() {
         // Handle form submission failure
         console.error("Form submission failed");
       }
+
+      setFormData({
+        email: "",
+        name: "",
+        address: "",
+        phoneNumber: "",
+        pincode: "",
+        remark: "",
+      });
     } catch (error) {
       console.error("Error submitting form:", error);
     }

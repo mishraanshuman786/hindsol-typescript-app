@@ -1,7 +1,107 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect,ChangeEvent,FormEvent} from "react";
+import { useRouter } from "next/navigation";
+
+interface ApiResponse {
+  status: boolean;
+  id?: string; // Optional property if the API response includes an ID
+  // Add other properties as needed based on your API response
+}
+
+interface FormData {
+  email: string;
+  name: string;
+  address: string;
+  phoneNumber: string;
+  pincode: string;
+  remark: string;
+  courses: string[]; // Array of course names
+}
+
+
 
 function SkillDevRegistrationForm() {
+
+  const paymentRouter=useRouter();
+  const [formData, setFormData] = useState<FormData>({
+    email: "",
+    name: "",
+    address: "",
+    phoneNumber: "",
+    pincode: "",
+    remark: "",
+    courses: [],
+  });
+
+  async function callPhonePay(id:any){
+    // Redirect to the phone payment gateway page with database _id and amount
+    const paymentUrl = `/api/it/payment/initiatePayment/${id}`;
+    const response= await fetch(paymentUrl, {
+      method: "GET"
+    });
+
+    const responseData = await response.json();
+     if(responseData.status)
+     {
+      paymentRouter.replace(responseData.data);
+     }
+  
+}
+
+  const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleCheckboxChange = (e:ChangeEvent<HTMLInputElement>) => {
+    const { value, checked } = e.target;
+    if (checked) {
+      setFormData((prevData) => ({
+        ...prevData,
+        courses: [...prevData.courses, value],
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        courses: prevData.courses.filter((course) => course !== value),
+      }));
+    }
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const formDataToSend = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+          value.forEach((v) => formDataToSend.append(key, v));
+        } else {
+          formDataToSend.append(key, value);
+        }
+      });
+  
+      const response= await fetch("/api/it/skilldev/skilldevSavingForm", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      const responseData = await response.json() as ApiResponse;
+
+      if(responseData.status)
+      {
+         callPhonePay(responseData.id);
+      }
+     
+      // Handle response as needed
+      console.log("Response:", response);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <div>
       <div className="mx-20 my-10">
@@ -28,11 +128,13 @@ function SkillDevRegistrationForm() {
         <h2 className="text-xl md:text-2xl  mb-4 font-semibold text-center">
           Apply Now
         </h2>
-        <form className="max-w-lg mx-auto">
+        <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="email"
-              name="floating_email"
+              value={formData.email}
+              onChange={handleChange}
+              name="email"
               id="floating_email"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -48,7 +150,9 @@ function SkillDevRegistrationForm() {
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
-              name="floating_name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               id="floating_name"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -64,7 +168,9 @@ function SkillDevRegistrationForm() {
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
-              name="repeat_address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
               id="floating_address"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -81,7 +187,9 @@ function SkillDevRegistrationForm() {
             <div className="relative z-0 w-full mb-5 group">
               <input
                 type="number"
-                name="floating_phone_number"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                name="phoneNumber"
                 id="floating_phone_number"
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
@@ -99,7 +207,9 @@ function SkillDevRegistrationForm() {
               <input
                 type="number"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                name="floating_pincode"
+                value={formData.pincode}
+                onChange={handleChange}
+                name="pincode"
                 id="floating_pincode"
                 className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
@@ -117,7 +227,9 @@ function SkillDevRegistrationForm() {
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
-              name="floating_remark"
+              value={formData.remark}
+              onChange={handleChange}
+              name="remark"
               id="floating_remark"
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
@@ -138,7 +250,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              onChange={handleCheckboxChange}
+              value="FULL STACK WITH NEXT JS"
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -153,7 +266,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="FRONT END"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -168,7 +282,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="BACK END WITH NEXT JS"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -183,7 +298,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="CORE JAVA"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -198,7 +314,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="ADVANCE JAVA"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -213,7 +330,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="FULL STACK WITH JAVA"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -228,7 +346,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="BACK END WITH JAVA"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -243,7 +362,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="DIGITAL MARKETING"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -258,7 +378,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="ORACLE"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -273,7 +394,8 @@ function SkillDevRegistrationForm() {
             <input
               id="default-checkbox"
               type="checkbox"
-              value=""
+              value="GRAPHICS DESIGN"
+              onChange={handleCheckboxChange}
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
@@ -284,20 +406,6 @@ function SkillDevRegistrationForm() {
             </label>
           </div>
 
-          <div className="flex items-center mb-4">
-            <input
-              id="default-checkbox"
-              type="checkbox" 
-              value=""
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-              htmlFor="default-checkbox"
-              className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >
-            others:(Please Mention in Remark)
-            </label>
-          </div>
           </div>                   
 
           <button
