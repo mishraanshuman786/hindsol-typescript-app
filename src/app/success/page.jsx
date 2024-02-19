@@ -13,7 +13,7 @@ export default function Success() {
       if (counter > 0) {
         setCounter(counter - 1);
       } else {
-        router.push('/skilldev');
+        router.push('/skillDev');
       }
     }, 1000);
 
@@ -23,7 +23,7 @@ export default function Success() {
   }, [router, counter]);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-50">
+    <div className="flex flex-col items-center justify-center h-screen bg-blue-950">
       <Image
         src="/images/payment-success.svg"
         alt="Payment Success"
