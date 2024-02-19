@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import sha256 from "crypto-js/sha256";
 import axios from "axios";
+import { cookies } from 'next/headers'
 
 export async function POST(req, res) {
   try {
@@ -35,6 +36,7 @@ export async function POST(req, res) {
    
 
     if (response.data.code === "PAYMENT_SUCCESS") {
+      cookies().set('status', 'true');
       return NextResponse.redirect("https://hindsol.com/success", {
         status: 301,
       });
