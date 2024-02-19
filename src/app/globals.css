@@ -30,3 +30,19 @@
   margin-bottom: 10px; /* Adjust spacing between social media icons */
 }
 
+@keyframes flicker {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 1s infinite;
+}
+
