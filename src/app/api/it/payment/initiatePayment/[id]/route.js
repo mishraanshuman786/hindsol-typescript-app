@@ -12,9 +12,9 @@ async function callPhonePey(muid,amount) {
     merchantTransactionId: transactionId,
     merchantUserId: muid,
     amount: amount*100,
-    redirectUrl: `http://localhost:3000/api/it/payment/status/${transactionId}`,
+    redirectUrl: `https://hindsol.com/api/it/payment/status/${transactionId}`,
     redirectMode: "POST",
-    callbackUrl: `http://localhost:3000/api/it/payment/status/${transactionId}`,
+    callbackUrl: `https://hindsol.com/api/it/payment/status/${transactionId}`,
     paymentInstrument: {
       type: "PAY_PAGE",
     },

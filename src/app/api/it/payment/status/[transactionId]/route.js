@@ -39,11 +39,11 @@ export async function POST(req, res) {
 
         // Set the cookie with the path attribute
         res.setHeader("Set-Cookie", `status=true; path=${successPagePath}`);
-      return NextResponse.redirect("http://localhost:3000/success", {
+      return NextResponse.redirect("https://hindsol.com/success", {
         status: 301,
       });
     } else {
-      return NextResponse.redirect("http://localhost:3000/failure", {
+      return NextResponse.redirect("https://hindsol.com/failure", {
         status: 301,
       });
     }
