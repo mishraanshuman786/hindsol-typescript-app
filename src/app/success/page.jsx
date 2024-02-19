@@ -1,14 +1,13 @@
-"use client"
-import AlertPopup from "../../components/AlertPopup";
-import { cookies } from "next/headers";
+import { getCookie } from 'cookies';
+import AlertPopup from '../../components/AlertPopup';
 
-export default function Success(){
+export default function Success({ hasCookie }) {
+  const cookie = getCookie('status', { parse: true });
 
-    const cookieStore = cookies();
-    const hasCookie = cookieStore.has('status')
-   
-    return (<div>
-        <h1>Payment successfull</h1>
-      {(hasCookie)&& <AlertPopup message="Payment success" />}  
-        </div>)
+  return (
+    <div>
+      <h1>Payment successfull</h1>
+      {hasCookie && <AlertPopup message="Payment success" />}
+    </div>
+  );
 }
