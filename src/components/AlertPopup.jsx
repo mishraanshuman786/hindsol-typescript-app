@@ -27,7 +27,7 @@ const AlertPopup = () => {
                     </h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-500">
-                        Press "OK" to acknowledge the message.
+                        Press &quot;OK&quot; to acknowledge the message.
                       </p>
                     </div>
                   </div>
