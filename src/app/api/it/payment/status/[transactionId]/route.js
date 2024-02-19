@@ -35,10 +35,6 @@ export async function POST(req, res) {
    
 
     if (response.data.code === "PAYMENT_SUCCESS") {
-        const successPagePath = "/success"; // Set the path to the success page
-
-        // Set the cookie with the path attribute
-        res.setHeader("Set-Cookie", `status=true; path=${successPagePath}`);
       return NextResponse.redirect("https://hindsol.com/success", {
         status: 301,
       });
