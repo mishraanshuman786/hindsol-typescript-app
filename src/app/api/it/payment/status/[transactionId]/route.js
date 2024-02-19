@@ -21,12 +21,12 @@ export async function POST(req, res) {
 
     const options = {
       method: "GET",
-      url: `https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status/${merchantId}/${transactionId}`,
+      url: `https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status/${process.env.NEXT_MERCHANT_ID}/${transactionId}`,
       headers: {
         accept: "application/json",
         "Content-Type": "application/json",
         "X-VERIFY": checksum,
-        "X-MERCHANT-ID": `${merchantId}`,
+        "X-MERCHANT-ID": `${process.env.NEXT_MERCHANT_ID}`,
       },
     };
 
