@@ -1,7 +1,7 @@
 import { getCookie } from 'cookies';
 import AlertPopup from '../../components/AlertPopup';
 
-export default function Success({ hasCookie }) {
+export default function Success() {
   const cookie = getCookie('status', { parse: true });
 
   return (
