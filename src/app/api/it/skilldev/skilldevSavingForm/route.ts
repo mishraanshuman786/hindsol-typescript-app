@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     // console.log("saved response: " + savedResponse._id);
 
    
-    return NextResponse.json({ status: true, id: 123456 });
+    return NextResponse.json({ status: true, id: "123456" });
   } catch (error) {
     console.log(error);
     return NextResponse.json({ status: false });
