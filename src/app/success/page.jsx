@@ -7,7 +7,7 @@ export default function Success({ hasCookie }) {
   return (
     <div>
       <h1>Payment successfull</h1>
-      {hasCookie && <AlertPopup message="Payment success" />}
+      {cookie && <AlertPopup message="Payment success" />}
     </div>
   );
 }
