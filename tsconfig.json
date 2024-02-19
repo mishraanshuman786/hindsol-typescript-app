@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/app/career/layout.js", "src/app/api/it/payment/initiatePayment/[id]/route.js"  ],
+, "src/app/career/layout.js", "src/app/api/it/payment/initiatePayment/[id]/route.js", "src/app/success/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
