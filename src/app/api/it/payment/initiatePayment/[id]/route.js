@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import sha256 from "crypto-js/sha256";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import {redirect} from "next/navigation";
+
 
 
 async function callPhonePey(transactionId,amount) {
@@ -62,8 +62,8 @@ async function callPhonePey(transactionId,amount) {
 export async function GET(request,params) {
   try{
     const amount=49;
-    const muid=params.id;
-   const response=await callPhonePey(muid,amount);
+    const transactionId=params.id;
+   const response=await callPhonePey(transactionId,amount);
    if (response) {
     return NextResponse.json({ status: true, data: response });
   } else {

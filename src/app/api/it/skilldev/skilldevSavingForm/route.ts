@@ -42,10 +42,10 @@ export async function POST(request: NextRequest) {
       coursesWithPrices
     );
 
-    console.log("saved response: " + savedResponse._id);
+    console.log("saved response: " + savedResponse["_id"]);
 
    
-    return NextResponse.json({ status: true, id:savedResponse._id});
+    return NextResponse.json({ status: true, id:savedResponse["_id"]});
   } catch (error) {
     console.log(error);
     return NextResponse.json({ status: false });

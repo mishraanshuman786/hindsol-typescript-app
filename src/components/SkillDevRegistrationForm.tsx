@@ -158,6 +158,7 @@ function SkillDevRegistrationForm() {
         console.log("phonepay called");
          callPhonePay(responseData.id);
       }else{
+        alert("Something went wrong. Please refresh the page and continue again.....");
         console.log("phone pay is not called");
         throw new Error('phone pay is not called!');
       }
@@ -165,6 +166,7 @@ function SkillDevRegistrationForm() {
       // Handle response as needed
       console.log("Response:", response);
     } catch (error) {
+      alert("Something went wrong. Please refresh the page and continue again.....");
       console.error("Error:", error);
     }
   };

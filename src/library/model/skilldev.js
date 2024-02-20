@@ -2,14 +2,14 @@ import mongoose from "mongoose";
 
 // Define a subdocument schema for courses
 const courseSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    price: {
-        type: Number,
-        required: true,
-    },
+  name: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
 });
 
 const skilldevSchema = new mongoose.Schema({
@@ -48,4 +48,4 @@ const skilldevSchema = new mongoose.Schema({
 });
 
 export const SkilldevData =
-  mongoose.models.skilldevSchema || mongoose.model("skilldevData", skilldevSchema);
+  mongoose.models.skilldevData || mongoose.model("skilldevData", skilldevSchema);
