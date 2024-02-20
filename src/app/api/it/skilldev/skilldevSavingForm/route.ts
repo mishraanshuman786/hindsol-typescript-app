@@ -43,8 +43,13 @@ export async function POST(request: NextRequest) {
 
     console.log("saved response: " + savedResponse["_id"]);
 
-    localStorage.setItem("userId",savedResponse["_id"]);
-    return NextResponse.json({ status: true, id:savedResponse["_id"]});
+    const response = NextResponse.json({ status: true, id:savedResponse["_id"]});
+    response.cookies.set("userId", savedResponse["_id"], {
+      maxAge: 60 * 60 * 24 * 7, // cookie expiration time (1 week)
+      path: "/",
+      httpOnly: true,
+    });
+    return response;
   } catch (error) {
     console.log(error);
     return NextResponse.json({ status: false });
