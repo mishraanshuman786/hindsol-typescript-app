@@ -22,6 +22,8 @@ interface FormData {
 
 function SkillDevRegistrationForm() {
 
+ 
+
   const paymentRouter=useRouter();
   const [formData, setFormData] = useState<FormData>({
     email: "",
@@ -32,6 +34,61 @@ function SkillDevRegistrationForm() {
     remark: "",
     courses: [],
   });
+
+
+  // form validtion function start
+  const validateForm = () => {
+    // Validate email
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      alert("Please enter a valid email address.");
+      return false;
+    }
+  
+    // Validate name (only lowercase and trimmed)
+    formData.name = formData.name.toLowerCase().trim();
+    if (formData.name === "") {
+      alert("Please enter a name.");
+      return false;
+    }
+  
+    // Validate address (only lowercase and trimmed)
+    formData.address = formData.address.toLowerCase().trim();
+    if (formData.address === "") {
+      alert("Please enter an address.");
+      return false;
+    }
+  
+    // Validate phone number (10 characters)
+    if (formData.phoneNumber.length !== 10) {
+      alert("Please enter a valid phone number (10 characters).");
+      return false;
+    }
+  
+    // Validate pincode (6 characters)
+    if (formData.pincode.length !== 6) {
+      alert("Please enter a valid pincode (6 characters).");
+      return false;
+    }
+  
+    // Validate remark (maximum 200 words)
+    if (formData.remark.length > 200) {
+      alert("Please enter a remark with a maximum of 200 words.");
+      return false;
+    }
+  
+    // Validate at least one checkbox submission is mandatory
+    if (formData.courses.length === 0) {
+      alert("Please select at least one course.");
+      return false;
+    }
+  
+    return true;
+  };
+
+
+  // form validation function end
+
+
 
   async function callPhonePay(id:any){
     // Redirect to the phone payment gateway page with database _id and amount
@@ -73,6 +130,11 @@ function SkillDevRegistrationForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  
+    if (!validateForm()) {
+      return;
+    }
+  
     try {
       const formDataToSend = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
@@ -87,14 +149,14 @@ function SkillDevRegistrationForm() {
         method: "POST",
         body: formDataToSend,
       });
-
+  
       const responseData = await response.json() as ApiResponse;
-
+  
       if(responseData.status)
       {
          callPhonePay(responseData.id);
       }
-     
+  
       // Handle response as needed
       console.log("Response:", response);
     } catch (error) {
@@ -429,3 +491,5 @@ function SkillDevRegistrationForm() {
 }
 
 export default SkillDevRegistrationForm;
+
+

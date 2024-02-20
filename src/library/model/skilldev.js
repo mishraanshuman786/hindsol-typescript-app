@@ -39,7 +39,12 @@ const skilldevSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please Provide your Remark."],
   },
-  courses:[courseSchema]
+  courses:[courseSchema],
+  paymentstatus: {
+    type: Boolean,
+    default: false,
+    required: [true, "Please Provide your paymentstatus."],
+  },
 });
 
 export const SkilldevData =
