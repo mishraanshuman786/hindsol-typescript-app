@@ -7,18 +7,14 @@ import { v4 as uuidv4 } from "uuid";
 
 async function callPhonePey(muid,amount) {
   const transactionId= "MT-" + uuidv4().toString(36).slice(-6);
-  const sendingObject={
-    "transactionId":transactionId,
-    "muid":muid
-  };
   const payload = {
     merchantId:process.env.NEXT_MERCHANT_ID,
     merchantTransactionId: transactionId,
     merchantUserId: muid,
     amount: amount*100,
-    redirectUrl: `https://hindsol.com/api/it/payment/status/${sendingObject}`,
+    redirectUrl: `https://hindsol.com/api/it/payment/status/${transactionId}`,
     redirectMode: "POST",
-    callbackUrl: `https://hindsol.com/api/it/payment/status/${sendingObject}`,
+    callbackUrl: `https://hindsol.com/api/it/payment/status/${transactionId}`,
     paymentInstrument: {
       type: "PAY_PAGE",
     },

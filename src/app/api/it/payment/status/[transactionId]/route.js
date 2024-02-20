@@ -9,7 +9,7 @@ export async function POST(req, res) {
    
     const status = data.get("code");
     const merchantId = data.get("merchantId");
-    const {transactionId,muid}= data.get("sendingObject");
+    const transactionId = data.get("transactionId");
 
    
     const st =
@@ -36,8 +36,8 @@ export async function POST(req, res) {
    
 
     if (response.data.code === "PAYMENT_SUCCESS") {
-      console.log("muid:",muid);
-      return NextResponse.redirect(`https://hindsol.com/success/${muid}`, {
+
+      return NextResponse.redirect(`https://hindsol.com/success/${merchantId}`, {
         status: 301,
       });
     } else {
