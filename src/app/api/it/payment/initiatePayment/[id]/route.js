@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 
 
 
-async function callPhonePey(muid,amount) {
-  const transactionId= "MT-" + uuidv4().toString(36).slice(-6);
+async function callPhonePey(transactionId,amount) {
+  const muid= "MT-" + uuidv4().toString(36).slice(-6);
   const payload = {
     merchantId:process.env.NEXT_MERCHANT_ID,
     merchantTransactionId: transactionId,
