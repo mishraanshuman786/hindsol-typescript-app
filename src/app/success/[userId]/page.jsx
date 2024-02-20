@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import "../globals.css";
 
-export default function Success() {
+export default function Success({params}) {
   const router = useRouter();
 
   const [counter, setCounter] = useState(10);
+  console.log("params",params);
 
   useEffect(() => {
     const timer = setTimeout(() => {
