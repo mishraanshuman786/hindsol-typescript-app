@@ -3,13 +3,14 @@ import sha256 from "crypto-js/sha256";
 import axios from "axios";
 
 
-export async function POST(req, res) {
+export async function POST(req, content ) {
   try {
     const data = await req.formData();
    
     const status = data.get("code");
     const merchantId = data.get("merchantId");
     const transactionId = data.get("transactionId");
+    const muid=content.params.transactionId;
 
    
     const st =
@@ -37,7 +38,7 @@ export async function POST(req, res) {
 
     if (response.data.code === "PAYMENT_SUCCESS") {
 
-      return NextResponse.redirect(`https://hindsol.com/success/${merchantId}`, {
+      return NextResponse.redirect(`https://hindsol.com/success/${muid}`, {
         status: 301,
       });
     } else {
