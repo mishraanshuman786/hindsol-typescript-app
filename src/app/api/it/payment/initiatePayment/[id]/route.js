@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 
 
 
-async function callPhonePey(transactionId,amount) {
-  const muid = "MT-" + uuidv4().toString(36).slice(-6);
+async function callPhonePey(muid,amount) {
+  const transactionId= "MT-" + uuidv4().toString(36).slice(-6);
   const payload = {
     merchantId:process.env.NEXT_MERCHANT_ID,
     merchantTransactionId: transactionId,
@@ -62,8 +62,8 @@ async function callPhonePey(transactionId,amount) {
 export async function GET(request,params) {
   try{
     const amount=49;
-    const transactionId=params.id;
-   const response=await callPhonePey(transactionId,amount);
+    const muid=params.id;
+   const response=await callPhonePey(muid,amount);
    if (response) {
     return NextResponse.json({ status: true, data: response });
   } else {
