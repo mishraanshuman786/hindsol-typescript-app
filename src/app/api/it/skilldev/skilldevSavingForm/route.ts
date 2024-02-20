@@ -31,25 +31,20 @@ export async function POST(request: NextRequest) {
     });
 
     //  saving the data to the skilldev database
-    const savedResponse = await saveData(
-      name,
-      email,
-      address,
-      phoneNumber,
-      pincode,
-      remark,
-      coursesWithPrices
-    );
+    // const savedResponse = await saveData(
+    //   name,
+    //   email,
+    //   address,
+    //   phoneNumber,
+    //   pincode,
+    //   remark,
+    //   coursesWithPrices
+    // );
 
-    console.log("saved response: " + savedResponse["_id"]);
+    // console.log("saved response: " + savedResponse["_id"]);
 
-    const response = NextResponse.json({ status: true, id:savedResponse["_id"]});
-    response.cookies.set("userId", savedResponse["_id"], {
-      maxAge: 60 * 60 * 24 * 7, // cookie expiration time (1 week)
-      path: "/",
-      httpOnly: true,
-    });
-    return response;
+    return NextResponse.json({ status: true, id:'1234567891929'});
+   
   } catch (error) {
     console.log(error);
     return NextResponse.json({ status: false });
