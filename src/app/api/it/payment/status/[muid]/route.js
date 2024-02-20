@@ -8,10 +8,10 @@ export async function POST(req, content ) {
     const data = await req.formData();
    
     const status = data.get("code");
-    const merchantId = data.get("merchantId");
-    const msuid=data.get("merchantUserId");
     const transactionId = data.get("transactionId");
-    const muid=content.params.transactionId;
+    const muid=content.params.muid;
+
+    console.log("muid:",content.params);
 
    
     const st =
@@ -39,7 +39,7 @@ export async function POST(req, content ) {
 
     if (response.data.code === "PAYMENT_SUCCESS") {
 
-      return NextResponse.redirect(`https://hindsol.com/success/${msuid}`, {
+      return NextResponse.redirect(`https://hindsol.com/success/${muid}`, {
         status: 301,
       });
     } else {
