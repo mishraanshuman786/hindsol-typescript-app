@@ -38,7 +38,7 @@ export async function POST(req) {
 
     if (response.data.code === "PAYMENT_SUCCESS") {
 
-      return NextResponse.redirect(`https://hindsol.com/success/${muid}`, {
+      return NextResponse.redirect(`https://hindsol.com/success/`, {
         status: 301,
       });
     } else {

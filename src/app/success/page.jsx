@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import "../../globals.css";
+import "../globals.css";
 
 export default function Success({params}) {
   const router = useRouter();
