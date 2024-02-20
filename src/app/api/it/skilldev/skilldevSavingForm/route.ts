@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
 
     console.log("saved response: " + savedResponse["_id"]);
 
-    cookies().set('userId',savedResponse["_id"] );
+    cookies().set('userId',savedResponse["_id"] ,{path:"/success"});
     return NextResponse.json({ status: true, id:savedResponse["_id"]});
   } catch (error) {
     console.log(error);
