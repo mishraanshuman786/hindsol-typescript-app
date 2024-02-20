@@ -9,8 +9,7 @@ export async function POST(req, res) {
    
     const status = data.get("code");
     const merchantId = data.get("merchantId");
-    const transactionId = data.get("transactionId");
-    const muid=data.get("merchantUserId");
+    const {transactionId,muid}= data.get("sendingObject");
 
    
     const st =
