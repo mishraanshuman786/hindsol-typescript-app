@@ -9,8 +9,7 @@ export async function POST(req) {
    
     const status = data.get("code");
     const transactionId = data.get("transactionId");
-    let muid = req.params.muid; // get muid from params
-    console.log("userid:",muid);
+    
 
    
     const st =
