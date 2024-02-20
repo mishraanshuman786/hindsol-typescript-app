@@ -3,15 +3,15 @@ import sha256 from "crypto-js/sha256";
 import axios from "axios";
 
 
-export async function POST(req,params) {
+export async function POST(req) {
   try {
     const data = await req.formData();
    
     const status = data.get("code");
     const transactionId = data.get("transactionId");
-    const muid=params.muid;
+    const {muid}=req.query;
 
-    console.log("muid:",params);
+    console.log("muid:",req.query);
 
    
     const st =
