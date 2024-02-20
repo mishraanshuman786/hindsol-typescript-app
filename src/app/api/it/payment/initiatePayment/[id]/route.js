@@ -60,7 +60,7 @@ async function callPhonePey(muid,amount) {
   }
 }
 
-export async function GET(request,params) {
+export async function GET(request,{params}) {
   try{
     const amount=49;
     const muid=await params.id;
