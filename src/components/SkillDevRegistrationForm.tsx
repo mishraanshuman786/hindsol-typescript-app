@@ -1,6 +1,7 @@
 "use client";
 import React,{useState,useEffect,ChangeEvent,FormEvent} from "react";
 import { useRouter } from "next/navigation";
+import { error } from "console";
 
 interface ApiResponse {
   status: boolean;
@@ -154,7 +155,11 @@ function SkillDevRegistrationForm() {
   
       if(responseData.status)
       {
+        console.log("phonepay called");
          callPhonePay(responseData.id);
+      }else{
+        console.log("phone pay is not called");
+        throw new Error('phone pay is not called!');
       }
   
       // Handle response as needed
