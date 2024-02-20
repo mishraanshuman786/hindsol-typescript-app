@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SkilldevData } from "@/library/model/skilldev";
 import mongooseConnect from "@/library/util/mongooseConnect";
-import { redirect } from "next/navigation";
+import { cookies } from 'next/headers'
 
 interface CourseData {
   name: string;
@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
 
     console.log("saved response: " + savedResponse["_id"]);
 
-   
+    cookies().set('userId',savedResponse["_id"] );
     return NextResponse.json({ status: true, id:savedResponse["_id"]});
   } catch (error) {
     console.log(error);
