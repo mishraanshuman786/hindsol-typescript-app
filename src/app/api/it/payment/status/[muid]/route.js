@@ -9,9 +9,7 @@ export async function POST(req) {
    
     const status = data.get("code");
     const transactionId = data.get("transactionId");
-    const match = req.url.match(/\/api\/it\/payment\/status\/(\w+)/);
-    const muid = match ? match[1] : null;
-    console.log("muid",muid);
+    let muid = req.params.muid; // get muid from params
 
    
     const st =
