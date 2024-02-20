@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 
 async function callPhonePey(muid,amount) {
   const transactionId= "MT-" + uuidv4().toString(36).slice(-6);
-  const id="123456789"
+  const id=await muid;
   const payload = {
     merchantId:process.env.NEXT_MERCHANT_ID,
     merchantTransactionId: transactionId,
@@ -63,7 +63,7 @@ async function callPhonePey(muid,amount) {
 export async function GET(request,params) {
   try{
     const amount=49;
-    const muid=params.id;
+    const muid=await params.id;
    const response=await callPhonePey(muid,amount);
    if (response) {
     return NextResponse.json({ status: true, data: response });
