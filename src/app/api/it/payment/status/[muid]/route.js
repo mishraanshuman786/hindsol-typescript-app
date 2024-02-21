@@ -8,6 +8,7 @@ import {SkilldevData} from "../../../../../../library/model/skilldev";
 
 export async function POST(req,{params}) {
   try {
+    console.log("request data:",req);
     const data = await req.formData();
    
     const status = data.get("code");
