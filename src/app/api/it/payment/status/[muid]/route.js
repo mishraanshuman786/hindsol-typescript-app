@@ -79,16 +79,11 @@ const updateData = {
 };
 
 // Use findByIdAndUpdate to find the document by ID and update it
-SkilldevData.findByIdAndUpdate(id, updateData, { new: true }, (err, updatedDoc) => {
-  if (err) {
-    console.error('Error updating document:', err);
-    // Handle error
-    throw new Error("Status is not Updated.")
-  } else {
-    console.log('Updated document:', updatedDoc);
-    // Handle updated document
-  }
-});
+const response=await SkilldevData.findByIdAndUpdate(id, updateData, { new: true });
+   if(response)
+   {
+    console.log("status updated in the database.");
+   }
   
   } catch (error) {
     console.error("Error updating the data:", error);
