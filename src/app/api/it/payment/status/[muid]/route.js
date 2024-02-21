@@ -14,7 +14,7 @@ export async function POST(req,{params}) {
     const status = data.get("code");
     const merchantId = data.get("merchantId");
     const transactionId = data.get("transactionId");
-    const muid=params.muid;
+    const muid=await params.muid;
     console.log("muid:",muid);
     console.log("params:",params);
     console.log("merchant id:",merchantId);
@@ -25,7 +25,7 @@ export async function POST(req,{params}) {
 
    
     const st =
-      `/pg/v1/status/${process.env.NEXT_MERCHANT_ID}/${transactionId}` +`${process.env.NEXT_SALT_KEY}`;
+      `/pg/v1/status/${merchantId}/${transactionId}` +`${process.env.NEXT_SALT_KEY}`;
     const dataSha256 = sha256(st);
 
     const checksum =
@@ -46,9 +46,9 @@ export async function POST(req,{params}) {
     // Check payment status
     const response = await axios.request(options);
    
-    // response.data.code
-    if (status === "PAYMENT_SUCCESS") {
-      await updatePaymentStatus(muid, true);
+    
+    if (response.data.code=== "PAYMENT_SUCCESS") {
+      await updatePaymentStatus(muid);
       return NextResponse.redirect(`https://hindsol.com/success`,
         {
           status: 301,
@@ -73,9 +73,7 @@ export async function POST(req,{params}) {
 
 
 // update status to database
-async function updatePaymentStatus (
- id,paymentstatus
-) {
+async function updatePaymentStatus (id) {
   try {
     // connect to the database
     await connectToMongoDB();
@@ -97,8 +95,8 @@ const response=await SkilldevData.findByIdAndUpdate(id, updateData, { new: true 
   }
 }
 
-
-const deletePaymentRecord = async (id) => {
+// deleting the data
+async function deletePaymentRecord(id) {
   try {
     // connect to the database
     await connectToMongoDB();
