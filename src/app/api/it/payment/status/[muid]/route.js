@@ -10,7 +10,7 @@ export async function POST(req,{params}) {
    
     const status = data.get("code");
     const transactionId = data.get("transactionId");
-    const muid=params.muid;
+    const muid=await params.muid;
     console.log("muid:",muid);
     console.log("params:",params);
 
@@ -56,11 +56,11 @@ export async function POST(req,{params}) {
 }
 
 const updatePaymentStatus = async (muid, paymentstatus) => {
-  const { db } = await connectToMongoDB();
+  const  db= await connectToMongoDB();
   await db.collection("skilldev").updateOne({ _id:muid }, { $set: { paymentstatus } });
 };
 
 const deletePaymentRecord = async (muid) => {
-  const { db } = await connectToMongoDB();
+  const db = await connectToMongoDB();
   await db.collection("skilldev").deleteOne({ _id:muid });
 };
