@@ -44,7 +44,7 @@ export async function POST(req,{params}) {
 
     if (response.data.code === "PAYMENT_SUCCESS") {
       await updatePaymentStatus(muid, true);
-      return NextResponse.redirect(`https://hindsol.com/success/${muid}`,
+      return NextResponse.redirect(`https://hindsol.com/success`,
         {
           status: 301,
         }
