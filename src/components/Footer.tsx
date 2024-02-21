@@ -155,7 +155,7 @@ function Footer() {
               <span className="sr-only">Facebook page</span>
             </Link>
             <Link
-              href="https://www.youtube.com/@hindsolsoftwarepvtltd7325"
+              href="https://www.youtube.com/@hindsolsoftwarepvtltd"
               className="text-white hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg
