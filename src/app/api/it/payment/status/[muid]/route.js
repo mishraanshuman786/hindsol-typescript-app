@@ -7,7 +7,7 @@ import {SkilldevData} from "../../../../../../library/model/skilldev";
 
 
 export async function POST(req,{params}) {
-  try {
+ 
 
     const data = await req.formData();
    
@@ -60,13 +60,7 @@ export async function POST(req,{params}) {
         status: 301,
       });
     }
-  } catch (error) {
-    console.error("Error processing payment:", error);
-    await deletePaymentRecord(params.muid); // Delete the record in the catch block
-    return NextResponse.redirect("https://hindsol.com/failure", {
-      status: 301,
-    });
-  }
+
   
 }
 
