@@ -82,7 +82,7 @@ const updateData = {
 const response=await SkilldevData.findByIdAndUpdate(id, updateData, { new: true });
    if(response)
    {
-    console.log("status updated in the database.");
+    console.log("status updated in the database."+response);
    }
   
   } catch (error) {
@@ -96,11 +96,7 @@ const deletePaymentRecord = async (id) => {
     // connect to the database
     await connectToMongoDB();
 
-    // updating the status
-    const skilldev=new SkilldevData();
-    await skilldev.delete({ _id:id });
-    
-    console.log("record deleted");
+    await SkilldevData.findByIdAndDelete(id);
   
   } catch (error) {
     console.error("Error deleting the data:", error);
