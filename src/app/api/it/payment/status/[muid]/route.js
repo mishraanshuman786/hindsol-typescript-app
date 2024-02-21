@@ -3,6 +3,7 @@ import sha256 from "crypto-js/sha256";
 import axios from "axios";
 import connectToMongoDB from "../../../../../../library/util/mongooseConnect";
 import {SkilldevData} from "../../../../../../library/model/skilldev";
+const mongoose = require('mongoose');
 
 
 export async function POST(req,{params}) {
@@ -72,11 +73,25 @@ async function updatePaymentStatus (
     // connect to the database
     await connectToMongoDB();
 
-    // updating the status
-    const skilldev=new SkilldevData();
-    await skilldev.updateOne({ _id:id }, { $set: { paymentstatus:true } });
-    
-    console.log("status updated");
+   // Assuming you have defined your schema
+const skilldev = mongoose.model('SkilldevData');
+
+// Your update data
+const updateData = {
+  paymentstatus:true
+};
+
+// Use findByIdAndUpdate to find the document by ID and update it
+slilldev.findByIdAndUpdate(id, updateData, { new: true }, (err, updatedDoc) => {
+  if (err) {
+    console.error('Error updating document:', err);
+    // Handle error
+    throw new Error("Status is not Updated.")
+  } else {
+    console.log('Updated document:', updatedDoc);
+    // Handle updated document
+  }
+});
   
   } catch (error) {
     console.error("Error updating the data:", error);
