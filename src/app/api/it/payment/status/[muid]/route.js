@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import sha256 from "crypto-js/sha256";
 import axios from "axios";
 import connectToMongoDB from "../../../../../../library/util/mongooseConnect";
+import {SkilldevData} from "../../../../../../library/model/skilldev";
 
 
 export async function POST(req,{params}) {
@@ -49,18 +50,46 @@ export async function POST(req,{params}) {
     }
   } catch (error) {
     console.error("Error processing payment:", error);
-    await deletePaymentRecord(req.params.muid); // Delete the record in the catch block
+    await deletePaymentRecord(params.muid); // Delete the record in the catch block
     return res.status(500).json({ error: "Internal server error" });
   }
   
 }
 
-const updatePaymentStatus = async (muid, paymentstatus) => {
-  const  db= await connectToMongoDB();
-  await db.collection("skilldev").updateOne({ _id:muid }, { $set: { paymentstatus } });
-};
 
-const deletePaymentRecord = async (muid) => {
-  const db = await connectToMongoDB();
-  await db.collection("skilldev").deleteOne({ _id:muid });
+
+// update status to database
+async function updatePaymentStatus (
+ id,paymentstatus
+) {
+  try {
+    // connect to the database
+    await connectToMongoDB();
+
+    // updating the status
+    const skilldev=new SkilldevData();
+    await skilldev.updateOne({ _id:id }, { $set: { paymentstatus } });
+    
+    console.log("status updated");
+  
+  } catch (error) {
+    console.error("Error updating the data:", error);
+  }
+}
+
+
+const deletePaymentRecord = async (id) => {
+  try {
+    // connect to the database
+    await connectToMongoDB();
+
+    // updating the status
+    const skilldev=new SkilldevData();
+    await skilldev.delete({ _id:id });
+    
+    console.log("record deleted");
+  
+  } catch (error) {
+    console.error("Error deleting the data:", error);
+  }
 };
