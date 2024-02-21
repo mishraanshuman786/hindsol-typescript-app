@@ -3,10 +3,10 @@ import {connectionSrc} from "./db";
 
 export default async function connectToMongoDB() {
   try {
-    await mongoose.connect(connectionSrc, {
+    const connection=await mongoose.connect(connectionSrc, {
       useNewUrlParser: true,
     });
-    console.log('Connected to MongoDB');
+   return connection;
   } catch (error) {
     console.error('Error connecting to MongoDB:', error.message);
   }
