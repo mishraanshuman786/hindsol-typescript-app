@@ -74,7 +74,7 @@ async function updatePaymentStatus (
 
     // updating the status
     const skilldev=new SkilldevData();
-    await skilldev.updateOne({ _id:id }, { $set: { paymentstatus } });
+    await skilldev.updateOne({ _id:id }, { $set: { paymentstatus:true } });
     
     console.log("status updated");
   
