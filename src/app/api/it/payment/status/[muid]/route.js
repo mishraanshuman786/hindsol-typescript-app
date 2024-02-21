@@ -43,15 +43,21 @@ export async function POST(req,{params}) {
 
     if (response.data.code === "PAYMENT_SUCCESS") {
       await updatePaymentStatus(muid, true);
-      return res.status(301).redirect(`https://hindsol.com/success/${muid}`);
+      return NextResponse.redirect(`https://hindsol.com/success/${muid}`,
+        {
+          status: 301,
+        }
+      );
     } else {
       await deletePaymentRecord(muid);
-      return res.status(301).redirect("https://hindsol.com/failure");
+      return NextResponse.redirect("https://hindsol.com/failure", {
+        status: 301,
+      });
     }
   } catch (error) {
     console.error("Error processing payment:", error);
     await deletePaymentRecord(params.muid); // Delete the record in the catch block
-    return res.status(500).json({ error: "Internal server error" });
+    return NextResponse.error(error);
   }
   
 }
