@@ -31,19 +31,19 @@ export async function POST(request: NextRequest) {
     });
 
     //  saving the data to the skilldev database
-    // const savedResponse = await saveData(
-    //   name,
-    //   email,
-    //   address,
-    //   phoneNumber,
-    //   pincode,
-    //   remark,
-    //   coursesWithPrices
-    // );
+    const savedResponse = await saveData(
+      name,
+      email,
+      address,
+      phoneNumber,
+      pincode,
+      remark,
+      coursesWithPrices
+    );
 
-    // console.log("saved response: " + savedResponse["_id"]);
+    console.log("saved response: " + savedResponse["_id"]);
 
-    return NextResponse.json({ status: true, id:'1234567891929'});
+    return NextResponse.json({ status: true, id:savedResponse["_id"]});
    
   } catch (error) {
     console.log(error);
