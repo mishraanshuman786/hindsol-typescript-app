@@ -58,7 +58,9 @@ export async function POST(req,{params}) {
   } catch (error) {
     console.error("Error processing payment:", error);
     await deletePaymentRecord(params.muid); // Delete the record in the catch block
-    return NextResponse.error(error);
+    return NextResponse.redirect("https://hindsol.com/failure", {
+      status: 301,
+    });
   }
   
 }
