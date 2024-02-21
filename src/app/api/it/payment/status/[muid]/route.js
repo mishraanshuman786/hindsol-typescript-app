@@ -97,6 +97,7 @@ const deletePaymentRecord = async (id) => {
     await connectToMongoDB();
 
     await SkilldevData.findByIdAndDelete(id);
+    console.log("data deleted from the database");
   
   } catch (error) {
     console.error("Error deleting the data:", error);
