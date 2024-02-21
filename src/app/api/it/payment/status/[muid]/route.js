@@ -9,13 +9,14 @@ import {SkilldevData} from "../../../../../../library/model/skilldev";
 export async function POST(req,{params}) {
   try {
     console.log("request data:",req);
-    const data = await req.formData();
-   
-    const status = data.get("code");
-    const transactionId = data.get("transactionId");
+    const data = await req.json();
+   const status = data.code;
+   const transactionId = data.transactionId;
     const muid=await params.muid;
     console.log("muid:",muid);
     console.log("params:",params);
+    condsole.log("transactionId:",transactionId);
+    console.log("status:",status);
 
     
 
