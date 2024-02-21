@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import sha256 from "crypto-js/sha256";
 import axios from "axios";
+import connectToMongoDB from "../../../../../../library/util/mongooseConnect";
 
 
 export async function POST(req,{params}) {
@@ -40,17 +41,26 @@ export async function POST(req,{params}) {
    
 
     if (response.data.code === "PAYMENT_SUCCESS") {
-
-      return NextResponse.redirect(`https://hindsol.com/success/${muid}`, {
-        status: 301,
-      });
+      await updatePaymentStatus(muid, true);
+      return res.status(301).redirect(`https://hindsol.com/success/${muid}`);
     } else {
-      return NextResponse.redirect("https://hindsol.com/failure", {
-        status: 301,
-      });
+      await deletePaymentRecord(muid);
+      return res.status(301).redirect("https://hindsol.com/failure");
     }
   } catch (error) {
     console.error("Error processing payment:", error);
-    return NextResponse.error(error);
+    await deletePaymentRecord(req.params.muid); // Delete the record in the catch block
+    return res.status(500).json({ error: "Internal server error" });
   }
+  
 }
+
+const updatePaymentStatus = async (muid, paymentstatus) => {
+  const { db } = await connectToMongoDB();
+  await db.collection("skilldev").updateOne({ _id:muid }, { $set: { paymentstatus } });
+};
+
+const deletePaymentRecord = async (muid) => {
+  const { db } = await connectToMongoDB();
+  await db.collection("skilldev").deleteOne({ _id:muid });
+};
