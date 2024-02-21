@@ -8,14 +8,16 @@ import {SkilldevData} from "../../../../../../library/model/skilldev";
 
 export async function POST(req,{params}) {
   try {
-    console.log("request data:",req);
+
     const data = await req.formData();
    
     const status = data.get("code");
+    const merchantId = data.get("merchantId");
     const transactionId = data.get("transactionId");
-    const muid=await params.muid;
+    const muid=params.muid;
     console.log("muid:",muid);
     console.log("params:",params);
+    console.log("merchant id:",merchantId);
     console.log("transactionId:",transactionId);
     console.log("status:",status);
 
@@ -44,8 +46,8 @@ export async function POST(req,{params}) {
     // Check payment status
     const response = await axios.request(options);
    
-
-    if (response.data.code === "PAYMENT_SUCCESS") {
+    // response.data.code
+    if (status === "PAYMENT_SUCCESS") {
       await updatePaymentStatus(muid, true);
       return NextResponse.redirect(`https://hindsol.com/success`,
         {
