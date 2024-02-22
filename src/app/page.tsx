@@ -1,7 +1,7 @@
 import "./globals.css";
-import HomeBanner from "@/components/HomepageSlider";
-import ServicesComponent from "@/components/ServicesComponent";
-import OurServices from "@/components/OurServices";
+import HomeBanner from "@/components/homepage/HomepageSlider";
+import ServicesComponent from "@/components/homepage/ServicesComponent";
+import OurServices from "@/components/homepage/OurServices";
 import OurPortfolio from "@/components/OurPortfolio";
 import DiscussProject from "@/components/DiscussProject";
 import Footer from "@/components/Footer";

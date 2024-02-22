@@ -18,7 +18,7 @@ let arr = [
 ];
 export function OurPortfolio() {
   const [isHovered, setIsHovered] = useState(false);
-  const [image, setImage] = useState("/slider-images/slider-image3.jpeg");
+  const [image, setImage] = useState("/homepage-image-animation/imge1.jpg");
 
   return (
     <div>
@@ -44,7 +44,7 @@ export function OurPortfolio() {
               }`}
               onMouseEnter={() => {
                 setIsHovered(true);
-                setImage("/homepage-image-animation/image0.avif");
+                setImage(`/homepage-portfolio/image${index}.jpg`);
               }}
               onMouseLeave={() => {
                 setIsHovered(false);
