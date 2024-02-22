@@ -47,6 +47,7 @@ export async function POST(request: NextRequest) {
    
   } catch (error) {
     console.log(error);
+    alert("Error Saving the Data, Please try with Another Id and Credentials.")
     return NextResponse.json({ status: false });
   }
 }
@@ -110,6 +111,7 @@ async function saveData(
     console.log("User data saved to the database:", responseData);
     return responseData;
   } catch (error) {
+    alert("Error Saving the Data, Please try with Another Id and Credentials.");
     console.error("Error saving user data:", error);
   }
 }
