@@ -127,7 +127,7 @@ let arr = [
 ];
 function ServicesComponent() {
   return (
-    <div className='gap-4 px-8 mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+    <div className='gap-4 px-8 mb-4 grid grid-cols-24  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
       {arr.map((element, index) => {
         let image = `/images/${index}.png`;
 

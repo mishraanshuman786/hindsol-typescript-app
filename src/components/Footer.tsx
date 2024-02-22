@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer>
       <div className="mx-auto bg-blue-950 w-[100%]  p-4 py-6 lg:py-8">
-        <div className="md:flex md:justify-between">
+        <div className="md:flex md:justify-between ">
           <div className="mb-6 md:mb-0">
             <Link href="https://hindsol.com/" className="flex items-center">
               <img
@@ -17,16 +17,16 @@ function Footer() {
               />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 ">
             <div>
-              <h2 className="mb-6 text-lg font-semibold text-blue-600 uppercase ">
+              <h2 className="mb-6 text-lg font-semibold text-blue-400 uppercase underline ">
                 Company
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
                   <Link
                     href="/aboutUs"
-                    className="hover:underline"
+                    className="hover:underline text-[15px] md:text[25px]"
                   >
                    About Us
                   </Link>
@@ -34,7 +34,7 @@ function Footer() {
                 <li className="mb-4">
                   <Link
                     href="/contactUs"
-                    className="hover:underline"
+                    className="hover:underline text-[15px] md:text[25px]"
                   >
                     Contact Us
                   </Link>
@@ -42,7 +42,7 @@ function Footer() {
                 <li className="mb-4">
                   <Link
                     href="/career"
-                    className="hover:underline"
+                    className="hover:underline text-[15px] md:text[25px]"
                   >
                    Career
                   </Link>
@@ -50,7 +50,7 @@ function Footer() {
                 <li className="mb-4">
                   <Link
                     href="/skillDev"
-                    className="hover:underline"
+                    className="hover:underline text-[15px] md:text[25px]"
                   >
                  SkillDev
                   </Link>
@@ -58,14 +58,14 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-lg font-semibold text-blue-600 uppercase dark:text-white">
+              <h2 className="mb-6 text-lg font-semibold text-blue-400 uppercase dark:text-white underline">
                SERVICES
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
                   <Link
                     href="#"
-                    className="hover:underline "
+                    className="hover:underline text-[15px] md:text[25px]"
                   >
                     Info. Tech.
                   </Link>
@@ -73,7 +73,7 @@ function Footer() {
                 <li className="mb-4">
                   <Link
                     href="#"
-                    className="hover:underline"
+                    className="hover:underline text-[15px] md:text[25px]"
                   >
                    Legal
                   </Link>
@@ -81,7 +81,7 @@ function Footer() {
                 <li className="mb-4">
                   <Link
                     href="#"
-                    className="hover:underline"
+                    className="hover:underline text-[15px] md:text[25px]"
                   >
                   Inventory
                   </Link>
@@ -89,7 +89,7 @@ function Footer() {
                 <li className="mb-4">
                   <Link
                     href=""
-                    className="hover:underline"
+                    className="hover:underline text-[15px] md:text[25px]"
                   >
                    Training
                   </Link>
@@ -97,27 +97,27 @@ function Footer() {
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-lg font-semibold text-blue-600 uppercase dark:text-white">
+              <h2 className="mb-6 text-lg font-semibold text-blue-400 uppercase dark:text-white underline" >
                 POLICIES
               </h2>
               <ul className="text-white font-medium">
                 <li className="mb-4">
-                  <Link href="/policies/privacyPolicy" className="hover:underline">
+                  <Link href="/policies/privacyPolicy" className="hover:underline text-[15px] md:text[25px]">
                     Privacy Policy
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/policies/termsAndConditions" className="hover:underline">
+                  <Link href="/policies/termsAndConditions" className="hover:underline text-[15px] md:text[25px]">
                     Terms &amp; Conditions
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/policies/refundPolicy" className="hover:underline">
+                  <Link href="/policies/refundPolicy" className="hover:underline text-[15px] md:text[25px]">
                     Refund Policy
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link href="/#FAQs" className="hover:underline">
+                  <Link href="/#FAQs" className="hover:underline text-[15px] md:text[25px]">
                     FAQ
                   </Link>
                 </li>

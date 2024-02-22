@@ -32,7 +32,7 @@ export function OurPortfolio() {
         </strong>
       </div>
       <div
-        className="mb-4 grid grid-cols-4 grid-rows-3"
+        className="mb-4 grid grid-cols-4 grid-rows-3 bg-cover bg-center h-full w-full"
         style={{ backgroundImage: `url(${image})` }}
       >
         {arr.map((element, index) => {
@@ -48,7 +48,7 @@ export function OurPortfolio() {
               }}
               onMouseLeave={() => {
                 setIsHovered(false);
-                setImage("https://images.unsplash.com/photo-1708360553401-d9814666a156?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+                setImage("/homepage-portfolio/temp1.jpg");
               }}
             >
               {/* {element} {index + 1} */}

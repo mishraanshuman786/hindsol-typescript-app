@@ -30,7 +30,7 @@ function DiscussProject() {
           <source src="/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute z-40 bottom-28  right-60 text-white text-[80px]">
+        <div className="absolute z-40 md:bottom-28  md:right-60 bottom-[10%] right-[20%] text-white text-[25px] md:text-[80px]">
           <Typewriter
             options={{
               strings:courses,
