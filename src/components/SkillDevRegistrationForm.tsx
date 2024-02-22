@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import CountdownTimer from "./skilldev/CountdownTimer";
+import "./styles/SkilldevRegistrationForm.css";
 
 interface ApiResponse {
   status: boolean;
@@ -149,7 +151,6 @@ function SkillDevRegistrationForm() {
         console.log("phonepay called");
         callPhonePay(responseData.id);
       } else {
-       
         console.log("phone pay is not called");
         throw new Error("phone pay is not called!");
       }
@@ -160,13 +161,15 @@ function SkillDevRegistrationForm() {
       alert(
         "Something went wrong. Please refresh the page and continue again....."
       );
-      setFormData({ email: "",
-      name: "",
-      address: "",
-      phoneNumber: "",
-      pincode: "",
-      remark: "",
-      courses: [],})
+      setFormData({
+        email: "",
+        name: "",
+        address: "",
+        phoneNumber: "",
+        pincode: "",
+        remark: "",
+        courses: [],
+      });
       console.error("Error:", error);
     } finally {
       setIsLoading(false); // Set loading state to false after the request is completed
@@ -190,15 +193,17 @@ function SkillDevRegistrationForm() {
       {/* Registration Form */}
       <div className="container px-5 md:px-20">
         <div
-          // style={{
-          //   backgroundImage:
-          //     "linear-gradient(to right, #fa709a 0%, #fee140 100%)",
-          // }}
-          className="rounded-lg mx-auto shadow-md  mt-6 p-6  my-10 bg-blue-950 text-white"
+          
+          className="rounded-lg relative mx-auto shadow-md  mt-6 p-6  my-10 bg-blue-950 text-white"
         >
           <h2 className="text-xl md:text-2xl  mb-4 font-semibold text-center">
             Apply Now
           </h2>
+          {/* counter */}
+         <div className="rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 absolute -top-8 -left-24  waving-animation shadow-wave-animation"> 
+            <CountdownTimer />
+            {/* ... */}
+         </div>
           <form className="max-w-lg mx-auto" onSubmit={handleSubmit}>
             <div className="relative z-0 w-full mb-5 group">
               <input
@@ -502,7 +507,7 @@ function SkillDevRegistrationForm() {
               <button
                 type="reset"
                 className="text-white  bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-                onClick={()=>{
+                onClick={() => {
                   setFormData({
                     email: "",
                     name: "",
@@ -511,7 +516,7 @@ function SkillDevRegistrationForm() {
                     pincode: "",
                     remark: "",
                     courses: [],
-                  })
+                  });
                 }}
               >
                 Clear Form

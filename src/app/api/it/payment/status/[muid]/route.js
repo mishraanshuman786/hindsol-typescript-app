@@ -34,7 +34,7 @@ export async function POST(req,{params}) {
 
     const options = {
       method: "GET",
-      url: `https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/status/${process.env.NEXT_MERCHANT_ID}/${transactionId}`,
+      url: `https://api.phonepe.com/apis/hermes/pg/v1/status/${process.env.NEXT_MERCHANT_ID}/${transactionId}`,
       headers: {
         accept: "application/json",
         "Content-Type": "application/json",
