@@ -39,10 +39,10 @@ const CountdownTimer: React.FC = () => {
   }, []);
 
   return (
-    <div className="text-center p-6 bg-orange-500 rounded-lg shadow-md">
-      <h1 className="text-2xl text-white font-bold mb-4">Book Your Seat Now!</h1>
-      <div id="countdown" className="text-3xl font-bold mb-4 text-gray-200 animate-bounce">{countdown}</div>
-      <div id="message" className="text-lg text-white">{message}</div>
+    <div className="text-center p-4 md:p-6 bg-orange-500 rounded-lg shadow-md">
+      <h1 className="text-lg md:text-2xl text-white font-bold mb-2 md:mb-4">Book Your Seat Now!</h1>
+      <div id="countdown" className="text-xl md:text-3xl font-bold mb-2 md:mb-4 text-gray-200 animate-bounce">{countdown}</div>
+      <div id="message" className="text-sm md:text-lg text-white">{message}</div>
     </div>
   );
 };

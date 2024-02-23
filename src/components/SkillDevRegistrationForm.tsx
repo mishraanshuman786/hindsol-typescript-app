@@ -194,13 +194,13 @@ function SkillDevRegistrationForm() {
       <div className="container px-5 md:px-20">
         <div
           
-          className="rounded-lg relative mx-auto shadow-md  mt-6 p-6  my-10 bg-blue-950 text-white"
+          className="rounded-lg relative mx-auto shadow-md  md:mt-6 p-6  my-10 mt-28 bg-blue-950 text-white"
         >
           <h2 className="text-xl md:text-2xl  mb-4 font-semibold text-center">
             Apply Now
           </h2>
           {/* counter */}
-         <div className="rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 absolute -top-8 -left-24  waving-animation shadow-wave-animation"> 
+         <div className="rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 absolute md:-top-8 md:-left-24 -top-[104px] left-[18%] waving-animation shadow-wave-animation"> 
             <CountdownTimer />
             {/* ... */}
          </div>
