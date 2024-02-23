@@ -2,9 +2,8 @@
 import Navbar from "@/components/Navbar";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Pulsating from "@/components/Pulsating";
 import Footer from "@/components/Footer";
-import SkillDevRegistrationForm from "@/components/SkillDevRegistrationForm";
+import SkillDevRegistrationForm from "@/components/register/SkillDevRegistrationForm";
 
 function SkillDev() {
   return (

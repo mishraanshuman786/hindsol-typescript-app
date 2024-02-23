@@ -34,7 +34,7 @@ const ContactUs = () => {
 
         {/* Contact Image */}
         <img
-          src='/contactPage.jpg'
+          src='/contact-images/contactPage.jpg'
           width={600}
           height={600}
           className='md:w-1/2 object-cover'

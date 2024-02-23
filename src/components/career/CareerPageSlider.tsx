@@ -24,7 +24,7 @@ function HomepageSlider() {
             data-carousel-item
           >
             <img
-              src="/career/careerSlider1.svg"
+              src="/career-images/careerSlider1.svg"
               className="absolute  block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
               alt="..."
             />
@@ -35,7 +35,7 @@ function HomepageSlider() {
             data-carousel-item
           >
             <img
-              src="/career/careerSlider2.svg"
+              src="/career-images/careerSlider2.svg"
               className="absolute  block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
               alt="..."
             />

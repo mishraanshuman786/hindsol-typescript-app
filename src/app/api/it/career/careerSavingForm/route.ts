@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
       .toISOString()
       .slice(0, 10)}-${generateRandomString(10)}${extension}`;
 
-    const path = join("./public/", "career", uniqueFilename);
+    const path = join("./public/", "career-docs", uniqueFilename);
     await writeFile(path, buffer);
     console.log(`file is saved to the ${path} path.`);
 

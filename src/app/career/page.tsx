@@ -5,9 +5,9 @@ import Pulsating from "@/components/Pulsating";
 import { RiComputerLine } from "react-icons/ri";
 import { FaCode } from "react-icons/fa";
 import { BsFileBarGraphFill } from "react-icons/bs";
-import CareerPageSlider from "@/components/CareerPageSlider";
+import CareerPageSlider from "@/components/career/CareerPageSlider";
 import { motion } from "framer-motion";
-import CareerRegistrationForm from "@/components/CareerRegistrationForm";
+import CareerRegistrationForm from "@/components/career/CareerRegistrationForm";
 
 function Career() {
   const [loading, setLoading] = useState(true);

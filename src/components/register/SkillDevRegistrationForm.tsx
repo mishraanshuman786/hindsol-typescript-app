@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import CountdownTimer from "./skilldev/CountdownTimer";
+import CountdownTimer from "./CountdownTimer";
 import "./styles/SkilldevRegistrationForm.css";
 
 interface ApiResponse {
