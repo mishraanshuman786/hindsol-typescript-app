@@ -18,7 +18,7 @@ let arr = [
 ];
 export function OurPortfolio() {
   const [isHovered, setIsHovered] = useState(false);
-  const [image, setImage] = useState("/homepage-image-animation/imge1.jpg");
+  const [image, setImage] = useState("/homepage-portfolio/image8.jpg");
 
   return (
     <div>
@@ -48,7 +48,7 @@ export function OurPortfolio() {
               }}
               onMouseLeave={() => {
                 setIsHovered(false);
-                setImage("/homepage-portfolio/temp1.jpg");
+                setImage("/homepage-portfolio/image8.jpg");
               }}
             >
               {/* {element} {index + 1} */}
