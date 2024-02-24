@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar';
 import React,{useState,useEffect} from 'react';
 import Pulsating from '@/components/Pulsating';
 import Footer from '@/components/Footer';
+import AddressComponent from "../../components/contact/AddressComponent";
 
 const ContactUs = () => {
 
@@ -91,6 +92,12 @@ const ContactUs = () => {
         </div>
          
       </div>
+      
+      <div className=' my-10  flex items-center justify-center'>
+      <AddressComponent />
+    </div>
+     
+     
       {/* footer */}
       <Footer/> 
       </div>

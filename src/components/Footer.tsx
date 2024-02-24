@@ -64,34 +64,34 @@ function Footer() {
               <ul className="text-white font-medium">
                 <li className="mb-4">
                   <Link
-                    href="#"
+                    href="/services"
                     className="hover:underline text-[15px] md:text[25px]"
                   >
-                    Info. Tech.
+                    Web Development
                   </Link>
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="#"
+                    href="/services"
                     className="hover:underline text-[15px] md:text[25px]"
                   >
-                   Legal
+                    App Development
                   </Link>
                 </li>
                 <li className="mb-4">
                   <Link
-                    href="#"
+                    href="/services"
                     className="hover:underline text-[15px] md:text[25px]"
                   >
-                  Inventory
+                  Software Development
                   </Link>
                 </li>
                 <li className="mb-4">
                   <Link
-                    href=""
+                    href="/priceCalculation"
                     className="hover:underline text-[15px] md:text[25px]"
                   >
-                   Training
+                   Project Estimate
                   </Link>
                 </li>
               </ul>
@@ -129,10 +129,22 @@ function Footer() {
         <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between">
           <span className="text-sm text-white sm:text-center mb-4 sm:mb-0 sm:mr-4">
             {" "}
-            <Link href="https://flowbite.com/" className="hover:underline">
+            <div className="flex gap-2 flex-col md:flex-row md:gap-4">
+              <div>
+              <Link href="/#" className="hover:underline">
               HINDSOL SOFTWARE PVT. LTD.
             </Link>
-                  All Rights Reserved.
+              </div>
+              <div>
+              <h2>All Rights Reserved.</h2>
+              </div>
+              <div>
+                <h2>Copyright @2024</h2>
+              </div>
+                
+
+            </div>
+           
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <Link
