@@ -26,7 +26,7 @@ function SkillDev() {
               data-carousel-item
             >
               <img
-                src="/skilldev/header.jpg"
+                src="/skilldev-images/header.jpg"
                 className="absolute  block w-[98%] md:w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2  object-cover"
                 alt="..."
               />
