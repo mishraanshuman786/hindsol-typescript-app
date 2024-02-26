@@ -12,7 +12,7 @@
 /* RootLayout.module.css */
 .fixedSidebar {
   position: fixed;
-  top: 45%;
+  top: 32%;
   right: 0;
   width: 40px; /* Adjust width as needed */
   height: 250px; /* Full height of the viewport */

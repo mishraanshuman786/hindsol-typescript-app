@@ -1,9 +1,6 @@
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { FaInstagramSquare } from "react-icons/fa";
-import { MdFacebook } from "react-icons/md";
-import { RiWhatsappFill } from "react-icons/ri";
 
 
 const inter = Inter({ subsets: ["latin"] });

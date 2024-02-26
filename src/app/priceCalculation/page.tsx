@@ -13,6 +13,7 @@ import { TbDeviceImacCode } from "react-icons/tb";
 import { FaCheckSquare } from "react-icons/fa";
 import PaymentCalculatorSubComponent from "@/components/PaymentCalculatorSubComponent";
 import FAQs from "@/components/FAQs";
+import { BiArrowToTop } from "react-icons/bi";
 
 function PriceCalculation() {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -26,6 +27,8 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
   const [mvpApp,setMvpApp]=useState(false);
   const [basicApp,setBasicApp]=useState(false);
   const [refinedApp,setRefinedApp]=useState(false);
+  const [scroll,setScroll]=useState(false);
+ 
 
   return (
     <div>
@@ -62,7 +65,11 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
             <div className="flex  justify-center m-0 ">
               {/* desktop switch */}
               <div
-                onClick={() => setIsDesktop(true)}
+                onClick={() => {
+                  setIsDesktop(true);
+                  
+
+                }}
                 className={`flex items-center mr-2   font-semibold ${
                   isDesktop ? " text-blue-900" : "text-gray-900"
                 }`}
@@ -72,7 +79,11 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
               </div>
               {/* mobile switch */}
               <div
-                onClick={() => setIsDesktop(false)}
+                onClick={() =>{
+                 setIsDesktop(false);
+              
+                }
+                }
                 className={`flex items-center ml-2 font-semibold ${
                   isDesktop
                     ? "text-gray-900"
@@ -87,20 +98,20 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
           </div>
 
           {/* main content div */}
-          <div className="flex mt-4">
+          <div className="flex md:flex-row flex-col  mt-4 ">
             {/* left div */}
-            <div className="w-[65%]">
+            <div className="md:w-[65%] w-full">
               {/* Project Type Selection */}
               <div>
                 {isDesktop ? (
-                  <div>
+                  <div className="w-full  ">
                     <h3 className="text-[30px] mt-10   text-center font-semibold text-blue-800">
                       How BIG Is Your APP?
                     </h3>
-                    <div className="flex pr-4">
+                    <div className="flex md:flex-row justify-center mx-auto flex-col pr-4 w-[80%] md:w-auto ">
                       <div
                         title="App with Core functionality ,but without other side features."
-                        className="border-gray-300 ml-16 mt-6 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border"
+                        className="border-gray-300 md:ml-16 mx-auto mt-6 flex items-center bg-gray-200 rounded justify-center w-72 h-36 md:h-32 border"
                       >
                         <div>
                           <DiBrackets className="text-[40px]" />
@@ -110,7 +121,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
 
                       <div
                         title="App Core functionality + some side features that make addition to core functionality."
-                        className="border-gray-300 ml-16 mt-6 flex  items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border"
+                        className="border-gray-300 md:ml-16 mx-auto mt-6 flex  items-center bg-gray-200 rounded justify-center  w-72 h-36 md:h-32 border"
                       >
                         <div>
                           <DiHtml5Multimedia className="text-[40px]" />
@@ -120,7 +131,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
 
                       <div
                         title="Fully Build Application with all Core and Side Features. "
-                        className="border-gray-300 ml-16 mt-6 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border"
+                        className="border-gray-300 md:ml-16 mx-auto mt-6 flex items-center bg-gray-200 rounded justify-center  w-72 h-36 md:h-32 border"
                       >
                         <div>
                           <DiHtml53DEffects className="text-[40px]" />
@@ -130,13 +141,14 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                     </div>
                   </div>
                 ) : (
-                  <div>
-                    <div className="flex">
+                  <div
+                  >
+                    <div className="flex md:flex-row items-center flex-col  ">
                       <div
                         onClick={() => setIOSClicked(!isIOSClicked)}
                         className={`border-2  ${
                           isIOSClicked ? "border-blue-800" : "border-gray-300"
-                        } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+                        } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
                       >
                         <div>
                           {isIOSClicked ? (
@@ -152,7 +164,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                           isAndroidClicked
                             ? "border-blue-800"
                             : "border-gray-300"
-                        } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+                        } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
                       >
                         <div>
                           {isAndroidClicked ? (
@@ -171,7 +183,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                           How BIG Is Your APP?
                         </h3>
 
-                        <div className="flex pr-4">
+                        <div className="flex md:flex-row flex-col  pr-4">
                           <div
                             onClick={()=>{
                               setMvpApp(!mvpApp);
@@ -180,7 +192,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                             
                             }}
                             title="App with Core functionality ,but without other side features."
-                            className={`border-2 ${(mvpApp)?"border-blue-900":'border-gray-300'} ml-16 mt-6 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+                            className={`border-2 ${(mvpApp)?"border-blue-900":'border-gray-300'} md:ml-16 mx-auto mt-6 flex items-center bg-gray-200 rounded justify-center  md:w-72 w-[80%] h-36 md:h-32 border`}
                           >
                             <div>
                               <DiBrackets className="text-[40px]" />
@@ -197,7 +209,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                           }
                           }
                             title="App Core functionality + some side features that make addition to core functionality."
-                            className={`border-2 ${(basicApp)?"border-blue-900":"border-gray-300"} ml-16 mt-6 flex  items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+                            className={`border-2 ${(basicApp)?"border-blue-900":"border-gray-300"} md:ml-16 mx-auto mt-6 flex  items-center bg-gray-200 rounded justify-center  md:w-72 w-[80%] h-36 md:h-32 border`}
                           >
                             <div>
                               <DiHtml5Multimedia className="text-[40px]" />
@@ -214,7 +226,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                            }
                           }
                             title="Fully Build Application with all Core and Side Features. "
-                            className={`border-2 ${(refinedApp)?"border-blue-900":"border-gray-300"} ml-16 mt-6 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+                            className={`border-2 ${(refinedApp)?"border-blue-900":"border-gray-300"} md:ml-16 mx-auto mt-6 flex items-center bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
                           >
                             <div>
                               <DiHtml53DEffects className="text-[40px]" />
@@ -235,8 +247,8 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
               </div>
             </div>
             {/* right div */}
-            <div className="w-[35%] ">
-              <div className="bg-blue-800 sticky top-0  w-[90%] pt-4 h-[100vh] my-10 text-white rounded mx-auto">
+            <div className="md:w-[35%] w-full ">
+              <div className={`flex gap-5 md:flex-col flex-col-reverse justify-end bg-blue-800 md:sticky md:top-0 fixed ${(scroll)?'bottom-0' :'-bottom-[300px]'}  md:w-[90%] w-[100%] pt-4 md:h-[100vh] h-[500px] md:my-10 text-white rounded mx-auto`}>
                 {/* first div */}
                 <div className="border border-white mx-4 bg-blue-600  rounded">
                   <div className="flex justify-between">
@@ -265,9 +277,15 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
 
                 {/* third div */}
                 <div className=" mx-4 mt-4  rounded">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center">
                     <div className="flex items-center m-2">
                       <h3 className="text-[18px]">Total Cost:</h3>
+                    </div>
+                    <div className="w-[60px] flex md:hidden justify-center items-center h-[60px] rounded-lg bg-white"
+                     onClick={()=>{
+                        setScroll(!scroll);
+                    }}>
+                    <BiArrowToTop className="text-black text-[35px]" />
                     </div>
                   </div>
                   <h3 className="text-[35px] font-semibold ml-2">$0</h3>
@@ -275,12 +293,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
 
                 <hr className="mx-4 mt-6" />
 
-                {/* print estimation */}
-                <div className="border border-white mx-4 mt-4 bg-blue-600  rounded">
-                  <h2 className="text-[22px] text-center">
-                    Print a detailed Project Price Estimation Report
-                  </h2>
-                </div>
+               
               </div>
             </div>
           </div>
