@@ -247,8 +247,8 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
               </div>
             </div>
             {/* right div */}
-            <div className="md:w-[35%] w-full ">
-              <div className={`flex gap-5 md:flex-col flex-col-reverse justify-end bg-blue-800 md:sticky md:top-0 fixed ${(scroll)?'bottom-0' :'-bottom-[300px]'}  md:w-[90%] w-[100%] pt-4 md:h-[100vh] h-[500px] md:my-10 text-white rounded mx-auto`}>
+            <div className="md:w-[35%] w-full bg-white z-50 ">
+              <div className={`flex gap-5 md:flex-col flex-col-reverse justify-end md:justify-start bg-blue-800 transparen md:sticky md:top-0 fixed ${(scroll)?'bottom-0' :'-bottom-[240px]'}  md:w-[90%] w-[100%] pt-4 md:h-[100vh] h-[440px] md:my-10 text-white rounded mx-auto`}>
                 {/* first div */}
                 <div className="border border-white mx-4 bg-blue-600  rounded">
                   <div className="flex justify-between">
@@ -299,7 +299,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
           </div>
         </div>
       </header>
-      <section>
+      <section className="mt-20">
         <FAQs/>
       </section>
     </div>
