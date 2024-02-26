@@ -93,14 +93,13 @@ function PaymentCalculatorSubComponent() {
          App Field
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col md:justify-center">
+        <div className="flex justify-center">
           <div
             onClick={() => setFeatures((prev)=>({...prev,ecommerce:!features.ecommerce}))}
             className={`border-2  ${
               features.ecommerce ? "border-blue-800" : "border-gray-300"
-            } md:ml-16 mx-auto mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full w-[80%] h-36 md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
-           
             <div>
               {features.ecommerce ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
@@ -114,7 +113,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,logistics:!features.logistics}))}
             className={`border-2  ${
               features.logistics ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.logistics ? (
@@ -127,12 +126,12 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex md:flex-row flex-col  md:justify-center">
+        <div className="flex  justify-center">
           <div
             onClick={() => setFeatures((prev)=>({...prev,healthcare:!features.healthcare}))}
             className={`border-2  ${
              features.healthcare ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.healthcare ? (
@@ -146,7 +145,7 @@ function PaymentCalculatorSubComponent() {
             onClick={() => setFeatures((prev)=>({...prev,education:!features.education}))}
             className={`border-2  ${
               features.education ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.education ? (
@@ -161,7 +160,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,custom:!features.custom}))}
             className={`border-2  ${
               features.custom ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.custom ? (
@@ -181,12 +180,12 @@ function PaymentCalculatorSubComponent() {
          Users And Accounts
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col ">
+        <div className="flex ">
           <div
            onClick={() => setFeatures((prev)=>({...prev,emailSignup:!features.emailSignup}))}
             className={`border-2  ${
              features.emailSignup ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.emailSignup? (
@@ -201,7 +200,7 @@ function PaymentCalculatorSubComponent() {
             onClick={() => setFeatures((prev)=>({...prev,facebookSignup:!features.facebookSignup}))}
             className={`border-2  ${
               features.facebookSignup ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.facebookSignup ? (
@@ -215,12 +214,12 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex md:flex-row flex-col  justify-center">
+        <div className="flex  justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,googleSignup:!features.googleSignup}))}
             className={`border-2  ${
               features.googleSignup ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.googleSignup ? (
@@ -234,7 +233,7 @@ function PaymentCalculatorSubComponent() {
           onClick={() => setFeatures((prev)=>({...prev,multilanguage:!features.multilanguage}))}
             className={`border-2  ${
               features.multilanguage ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.multilanguage ? (
@@ -249,7 +248,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,invitationEmails:!features.invitationEmails}))}
             className={`border-2  ${
               features.invitationEmails ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.invitationEmails ? (
@@ -269,12 +268,12 @@ function PaymentCalculatorSubComponent() {
          App Content
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col">
+        <div className="flex ">
           <div
            onClick={() => setFeatures((prev)=>({...prev,dashboard:!features.dashboard}))}
             className={`border-2  ${
               features.dashboard ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.dashboard ? (
@@ -289,7 +288,7 @@ function PaymentCalculatorSubComponent() {
             onClick={() => setFeatures((prev)=>({...prev,mediaUploading:!features.mediaUploading}))}
             className={`border-2  ${
               features.mediaUploading ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.mediaUploading ? (
@@ -303,7 +302,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,sendingEmail:!features.sendingEmail}))}
             className={`border-2  ${
               features.sendingEmail ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.sendingEmail ? (
@@ -316,12 +315,12 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex md:flex-row flex-col  md:justify-center">
+        <div className="flex  justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,userInteractions:!features.userInteractions}))}
             className={`border-2  ${
               features.userInteractions ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.userInteractions ? (
@@ -335,7 +334,7 @@ function PaymentCalculatorSubComponent() {
           onClick={() => setFeatures((prev)=>({...prev,audioVideoProcessing:!features.audioVideoProcessing}))}
             className={`border-2  ${
               features.audioVideoProcessing ? "border-blue-800" : "border-gray-300"
-            } md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.audioVideoProcessing ? (
@@ -350,7 +349,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,searchingAndFiltering:!features.searchingAndFiltering}))}
             className={`border-2  ${
               features.searchingAndFiltering ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.searchingAndFiltering ? (
@@ -370,12 +369,12 @@ function PaymentCalculatorSubComponent() {
          GEOLOCATION
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col w-full ">
+        <div className="flex w-full ">
           <div
            onClick={() => setFeatures((prev)=>({...prev,geolocation:!features.geolocation}))}
             className={`border-2  ${
               features.geolocation ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.geolocation ? (
@@ -388,12 +387,12 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex md:flex-row flex-col  md:justify-center">
+        <div className="flex  justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,workingWithMaps:!features.workingWithMaps}))}
             className={`border-2  ${
               features.workingWithMaps ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.workingWithMaps ? (
@@ -408,7 +407,7 @@ function PaymentCalculatorSubComponent() {
           onClick={() => setFeatures((prev)=>({...prev,locationTracking:!features.locationTracking}))}
             className={`border-2  ${
               features.locationTracking ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.locationTracking ? (
@@ -428,12 +427,12 @@ function PaymentCalculatorSubComponent() {
          SCHEDULING / BOOKINGS
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col w-full ">
+        <div className="flex w-full ">
           <div
            onClick={() => setFeatures((prev)=>({...prev,scheduling:!features.scheduling}))}
             className={`border-2  ${
               features.scheduling ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.scheduling ? (
@@ -447,7 +446,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,bookings:!features.bookings}))}
             className={`border-2  ${
               features.bookings ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.bookings ? (
@@ -467,12 +466,12 @@ function PaymentCalculatorSubComponent() {
         USER INTERACTIONS
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col  md:justify-center">
+        <div className="flex  justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,chat:!features.chat}))}
             className={`border-2  ${
               features.chat ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.chat ? (
@@ -487,7 +486,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,commentsAndReviews:!features.commentsAndReviews}))}
             className={`border-2  ${
               features.commentsAndReviews ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.commentsAndReviews ? (
@@ -501,12 +500,12 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex md:flex-row flex-col  md:justify-center">
+        <div className="flex  justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,dataExchange:!features.dataExchange}))}
             className={`border-2  ${
               features.dataExchange ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.dataExchange ? (
@@ -520,7 +519,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,pushNotifications:!features.pushNotifications}))}
             className={`border-2  ${
              features.pushNotifications ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.pushNotifications ? (
@@ -542,12 +541,12 @@ function PaymentCalculatorSubComponent() {
        ECOMMERCE
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col  md:justify-center">
+        <div className="flex  justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,cart:!features.cart}))}
             className={`border-2  ${
               features.cart ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.cart ? (
@@ -562,7 +561,7 @@ function PaymentCalculatorSubComponent() {
             onClick={() => setFeatures((prev)=>({...prev,inAppPurchasing:!features.inAppPurchasing}))}
             className={`border-2  ${
               features.inAppPurchasing ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.inAppPurchasing ? (
@@ -576,12 +575,12 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex md:flex-row flex-col  md:justify-center">
+        <div className="flex  justify-center">
           <div
             onClick={() => setFeatures((prev)=>({...prev,paymentProcessing:!features.paymentProcessing}))}
             className={`border-2  ${
              features.paymentProcessing ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.paymentProcessing ? (
@@ -595,7 +594,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,subscriptions:!features.subscriptions}))}
             className={`border-2  ${
               features.subscriptions ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.subscriptions ? (
@@ -610,12 +609,12 @@ function PaymentCalculatorSubComponent() {
         </div>
 
             {/* third row */}
-            <div className="flex md:flex-row flex-col  md:justify-center">
+            <div className="flex  justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,inAppMarketplace:!features.inAppMarketplace}))}
             className={`border-2  ${
               features.inAppMarketplace ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.inAppMarketplace ? (
@@ -629,7 +628,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,productManagement:!features.productManagement}))}
             className={`border-2  ${
              features.productManagement ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.productManagement ? (
@@ -651,12 +650,12 @@ function PaymentCalculatorSubComponent() {
          ADMIN, FEEDBACK & ANALYTICS
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col w-full ">
+        <div className="flex w-full ">
           <div
            onClick={() => setFeatures((prev)=>({...prev,adminPanel:!features.adminPanel}))}
             className={`border-2  ${
              features.adminPanel? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.adminPanel ? (
@@ -674,7 +673,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,analytics:!features.analytics}))}
             className={`border-2  ${
               features.analytics ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
           >
             <div>
               {features.analytics ? (
@@ -689,7 +688,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,performanceMonitoring:!features.performanceMonitoring}))}
             className={`border-2  ${
               features.performanceMonitoring ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
           >
             <div>
               {features.performanceMonitoring ? (
@@ -709,12 +708,12 @@ function PaymentCalculatorSubComponent() {
         EXTERNAL APIS AND INTEGRATIONS
         </h3>
         <div>
-        <div className="flex md:flex-row flex-col md:justify-center">
+        <div className="flex justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,thirdPartyIntegration:!features.thirdPartyIntegration}))}
             className={`border-2  ${
               features.thirdPartyIntegration ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.thirdPartyIntegration ? (
@@ -729,7 +728,7 @@ function PaymentCalculatorSubComponent() {
            onClick={() => setFeatures((prev)=>({...prev,openApi:!features.openApi}))}
             className={`border-2  ${
               features.openApi ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.openApi ? (
@@ -743,12 +742,12 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex md:flex-row flex-col md:justify-center">
+        <div className="flex  justify-center">
           <div
            onClick={() => setFeatures((prev)=>({...prev,sms:!features.sms}))}
             className={`border-2  ${
               features.sms ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.sms ? (
@@ -762,7 +761,7 @@ function PaymentCalculatorSubComponent() {
           onClick={() => setFeatures((prev)=>({...prev,audioVideoCalls:!features.audioVideoCalls}))}
             className={`border-2  ${
               features.audioVideoCalls ? "border-blue-800" : "border-gray-300"
-            }  md:ml-16 mx-auto w-[80%] h-36 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
           >
             <div>
               {features.audioVideoCalls ? (
