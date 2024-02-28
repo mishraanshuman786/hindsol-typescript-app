@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Pulsating from "@/components/Pulsating";
 import Footer from "@/components/Footer";
+import TeamMember from "@/components/about/TeamMember";
 
 const AboutUsPage = () => {
   const [loading, setLoading] = useState(true);
@@ -88,7 +89,9 @@ const AboutUsPage = () => {
         </div>
        
       </section>
-       {/* footer */}
+      {/* Team member section */}
+        <TeamMember/>
+     {/* footer */}
        <Footer/>
       </div>
       
