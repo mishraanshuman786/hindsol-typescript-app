@@ -25,7 +25,7 @@ const teamMember = [
     description: "https://www.linkedin.com/in/hrheadarchana/",
   },
   {
-    image: "/team/full-stack.jpg",
+    image: "/team/full-stack.jpeg",
     name: "Anshuman Mishra",
     Designation: "Full-Stack Developer",
     description: "https://www.linkedin.com/in/anshuman-mishra-996195146/",
@@ -40,7 +40,7 @@ const teamMember = [
   {
     image: "/team/front.png",
     name: "Aakash Maurya",
-    Designation: "Fron-End Developer",
+    Designation: "Front-End Developer",
     description: "https://www.linkedin.com/in/akash-maurya-39a4b023a/",
   },
 ];
@@ -86,8 +86,10 @@ const TeamMember = () => {
   };
 
   return (
+    <div>
+      <h1 className="text-center text-blue-800 font-semibold md:text-[40px] text-[28px]">Our Team</h1>
     <div className="w-4/5 m-auto ">
-      <div className="mt-20 mb-10 ">
+      <div className="mt-5 mb-20 ">
         <Slider {...settings} >
         {teamMember.map((element, index) => {
           return (
@@ -116,6 +118,7 @@ const TeamMember = () => {
         </Slider>
 
       </div>
+    </div>
     </div>
   );
 };
