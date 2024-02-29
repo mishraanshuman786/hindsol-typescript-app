@@ -105,7 +105,7 @@ const ReviewComponent = () => {
               <FaStar />
               </p>
 
-              <p className="description font-semibold text-center text-[20px] text-gray-600 max-w-96">{element.description}</p>
+              <p className="description font-semibold text-center text-[14px] text-gray-600 max-w-96">{element.description}</p>
            
               
             </div>
