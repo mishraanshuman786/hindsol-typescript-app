@@ -82,8 +82,8 @@ const ReviewComponent = () => {
 
   return (
     <div>
-      <h1 className="text-center text-blue-800 font-semibold md:text-[40px] text-[28px]">Testimonials</h1>
-      <h3 className="text-center text-blue-800 font-semibold md:text-[23px] text-[15px]">See what people are saying</h3>
+      <h1 className="text-center text-blue-800 font-semibold md:text-[30px] text-[24px]">Testimonials</h1>
+      <h3 className="text-center text-blue-800 font-semibold md:text-[18px] text-[15px]">See what people are saying</h3>
 
     <div className="w-4/5 m-auto ">
       <div className="mt-5 mb-10 ">
