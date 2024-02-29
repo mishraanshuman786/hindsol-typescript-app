@@ -94,9 +94,9 @@ const ReviewComponent = () => {
             <div className="h-56 bg-indigo-700 flex justify-center items-center rounded-t-xl">
               <img src={element.image} className="w-44 h-44 rounded-full" />
             </div>
-            <div className="flex flex-col justify-between items-center gap-4 p-4">
-              <p className="font-semibold text-[18px] text-gray-800">{element.name}</p>
-              <p className="font-semibold text-[16px] text-gray-600">{element.Designation}</p>
+            <div className="overflow-hidden flex flex-col justify-between items-center gap-4 p-4">
+              <p className="font-semibold text-[16px] md text-gray-800">{element.name}</p>
+              <p className="font-semibold text-[14px] text-gray-600">{element.Designation}</p>
               <p className="font-semibold md:text-[24px] text-[20px] text-indigo-700 gap-2 flex">
               <FaStar />
               <FaStar />
@@ -105,7 +105,7 @@ const ReviewComponent = () => {
               <FaStar />
               </p>
 
-              <p className="description font-semibold text-center text-[14px] text-gray-600 max-w-96">{element.description}</p>
+              <p className="description font-semibold text-center md:text-[14px] text-[10px] text-gray-600 max-w-96">{element.description}</p>
            
               
             </div>
