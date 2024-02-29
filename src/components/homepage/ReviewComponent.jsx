@@ -91,7 +91,7 @@ const ReviewComponent = () => {
         {reviews.map((element, index) => {
           return (
           <div key={index} className="second h-[480px] md:h=[500px] bg-orange-300  text-black rounded-xl">
-            <div className="h-56 bg-indigo-700 flex justify-center items-center rounded-t-xl">
+            <div className="md:h-56 h-52 bg-indigo-700 flex justify-center items-center rounded-t-xl">
               <img src={element.image} className="w-44 h-44 rounded-full" />
             </div>
             <div className="overflow-hidden flex flex-col justify-between items-center gap-4 p-4">
@@ -105,7 +105,7 @@ const ReviewComponent = () => {
               <FaStar />
               </p>
 
-              <p className="description font-semibold text-center md:text-[14px] text-[10px] text-gray-600 max-w-96">{element.description}</p>
+              <p className="description overflow-hidden font-semibold text-center md:text-[14px] text-[10px] text-gray-600 max-w-96">{element.description}</p>
            
               
             </div>
