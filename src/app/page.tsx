@@ -6,6 +6,7 @@ import OurPortfolio from "@/components/homepage/OurPortfolio";
 import DiscussProject from "@/components/homepage/DiscussProject";
 import Footer from "@/components/Footer";
 import FAQs from "@/components/FAQs";
+import ReviewComponent from "@/components/homepage/ReviewComponent";
 
 
 
@@ -25,6 +26,8 @@ export default function Home() {
       <hr className="border border-gray-900 mx-10"/>
       <OurPortfolio />
       <hr className="border border-gray-900 mx-10 mt-10"/>
+     <ReviewComponent />
+      <hr className="border border-gray-900 mx-10"/>
       <FAQs/>
       <hr className="border border-gray-900 mx-10"/>
       <DiscussProject />
