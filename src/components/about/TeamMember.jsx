@@ -93,7 +93,7 @@ const TeamMember = () => {
         <Slider {...settings} >
         {teamMember.map((element, index) => {
           return (
-          <div key={index} className="bg-orange-200 h-[450px]  text-black rounded-xl">
+          <div key={index} className="first bg-orange-200 h-[450px]  text-black rounded-xl">
             <div className="h-56 bg-indigo-500 flex justify-center items-center rounded-t-xl">
               <img src={element.image} className="w-44 h-44 rounded-full" />
             </div>

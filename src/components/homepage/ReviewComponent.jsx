@@ -4,6 +4,7 @@ import Slider from"react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./styles/ReviewComponent.css";
+import { FaStar } from "react-icons/fa6";
 
 const reviews = [
   {
@@ -40,15 +41,17 @@ const reviews = [
 
 const ReviewComponent = () => {
   var settings = {
-    dots: true,
+    className: "center",
+    centerMode: true,
     infinite: true,
     slidesToShow: 3,
+    dots: true,
+    infinite: true,
     slidesToScroll: 1,
-    initialSlide: 0,
     autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 3000,
-    cssEase: "linear",
+    speed: 800,
+    autoplaySpeed: 2000,
+    
     responsive: [
       {
         breakpoint: 1024,
@@ -83,18 +86,26 @@ const ReviewComponent = () => {
       <h3 className="text-center text-blue-800 font-semibold md:text-[23px] text-[15px]">See what people are saying</h3>
 
     <div className="w-4/5 m-auto ">
-      <div className="mt-5 mb-20 ">
+      <div className="mt-5 mb-10 ">
         <Slider {...settings} >
         {reviews.map((element, index) => {
           return (
-          <div key={index} className="bg-orange-200 h-[500px]  text-black rounded-xl">
-            <div className="h-56 bg-indigo-500 flex justify-center items-center rounded-t-xl">
+          <div key={index} className="second h-[530px] bg-orange-300  text-black rounded-xl">
+            <div className="h-56 bg-indigo-700 flex justify-center items-center rounded-t-xl">
               <img src={element.image} className="w-44 h-44 rounded-full" />
             </div>
             <div className="flex flex-col justify-between items-center gap-4 p-4">
               <p className="font-semibold text-xl text-gray-800">{element.name}</p>
               <p className="font-semibold text-md text-gray-600">{element.Designation}</p>
-              <p className="font-semibold text-center text-md text-gray-600">{element.description}</p>
+              <p className="font-semibold md:text-[35px] text-[20px] text-indigo-700 gap-2 flex">
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              </p>
+
+              <p className="font-semibold text-center text-md text-gray-600 max-w-96">{element.description}</p>
            
               
             </div>
