@@ -90,7 +90,7 @@ const ReviewComponent = () => {
         <Slider {...settings} >
         {reviews.map((element, index) => {
           return (
-          <div key={index} className="second h-[480px] md:h=[500px] bg-orange-300  text-black rounded-xl">
+          <div key={index} className="second h-[480px] md:h=[510px] bg-orange-300  text-black rounded-xl">
             <div className="md:h-56 h-52 bg-indigo-700 flex justify-center items-center rounded-t-xl">
               <img src={element.image} className="w-44 h-44 rounded-full" />
             </div>
