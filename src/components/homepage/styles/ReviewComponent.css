@@ -12,7 +12,7 @@
 }
 
 .slick-center > div .second{
-    height: 550px !important;
+    height: 525px !important;
     filter: blur(0px);
 }
 .slick-center{
@@ -25,7 +25,7 @@
 @media(max-width:480px){
     
 .slick-center > div .second{
-    height: 525px !important;
+    height: 510px !important;
     filter: blur(0px);
 }
 
