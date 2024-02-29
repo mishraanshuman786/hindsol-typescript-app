@@ -10,9 +10,7 @@
     
     transition: padding-inline 0.5 ease,padding-top 0.5s ease,padding-bottom 0.5s ease;
 }
-.slick-slide > div > div > p.description{
-    font-size: 20px !important;
-}
+
 .slick-center > div .second{
     height: 570px !important;
     filter: blur(0px);
