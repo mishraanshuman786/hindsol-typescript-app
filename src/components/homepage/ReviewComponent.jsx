@@ -97,7 +97,7 @@ const ReviewComponent = () => {
             <div className="flex flex-col justify-between items-center gap-4 p-4">
               <p className="font-semibold text-xl text-gray-800">{element.name}</p>
               <p className="font-semibold text-md text-gray-600">{element.Designation}</p>
-              <p className="font-semibold md:text-[35px] text-[20px] text-indigo-700 gap-2 flex">
+              <p className="description font-semibold md:text-[35px] text-[20px] text-indigo-700 gap-2 flex">
               <FaStar />
               <FaStar />
               <FaStar />
