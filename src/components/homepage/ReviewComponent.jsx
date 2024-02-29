@@ -90,14 +90,14 @@ const ReviewComponent = () => {
         <Slider {...settings} >
         {reviews.map((element, index) => {
           return (
-          <div key={index} className="second h-[530px] bg-orange-300  text-black rounded-xl">
+          <div key={index} className="second h-[520px] bg-orange-300  text-black rounded-xl">
             <div className="h-56 bg-indigo-700 flex justify-center items-center rounded-t-xl">
               <img src={element.image} className="w-44 h-44 rounded-full" />
             </div>
             <div className="flex flex-col justify-between items-center gap-4 p-4">
-              <p className="font-semibold text-[20px] text-gray-800">{element.name}</p>
-              <p className="font-semibold text-[18px] text-gray-600">{element.Designation}</p>
-              <p className="font-semibold md:text-[28px] text-[20px] text-indigo-700 gap-2 flex">
+              <p className="font-semibold text-[18px] text-gray-800">{element.name}</p>
+              <p className="font-semibold text-[16px] text-gray-600">{element.Designation}</p>
+              <p className="font-semibold md:text-[24px] text-[20px] text-indigo-700 gap-2 flex">
               <FaStar />
               <FaStar />
               <FaStar />
