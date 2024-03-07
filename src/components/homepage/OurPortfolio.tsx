@@ -25,12 +25,7 @@ export function OurPortfolio() {
       <div className="text-[40px] text-blue-900 font-semibold text-center mt-[20px] mb-5 pt-[40px] pb-[20px]">
         Our Portfoilo
       </div>
-      <div className="text-lg text-center pb-[20px]">
-        <strong>
-          We Request Your Attention to These Pieces of Perfection We have
-          Developed.
-        </strong>
-      </div>
+      
       <div
         className="mb-4 grid grid-cols-4 grid-rows-3 bg-cover bg-center h-full w-full"
         style={{ backgroundImage: `url(${image})` }}

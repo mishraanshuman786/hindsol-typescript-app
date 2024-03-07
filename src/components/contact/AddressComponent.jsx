@@ -3,10 +3,10 @@ import React from "react";
 function AddressComponent() {
   return (
     
-      <div className="w-[90%] flex flex-col items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      <div className="md:w-[90%] flex flex-col items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
         <img
-          className="object-cover w-[40%] rounded-t-lg h-[300px] md:rounded-none md:rounded-s-lg"
+          className="object-cover md:w-[40%] w-auto rounded-t-lg h-[300px] md:rounded-none md:rounded-s-lg"
           src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="hindsol-image"
         />

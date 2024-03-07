@@ -26,7 +26,7 @@ const AboutUsPage = () => {
       {loading && <Pulsating />}
       {/* pulsating end */}
       <div className={`${loading ? "hidden" : ""}`}>
-        <section className="container mx-auto px-4 ">
+        <section className="container mx-auto md:mb-0 mb-8 px-4 ">
           <div className="outline-none flex flex-col md:flex-row items-center">
             <motion.div
               className="md:w-full md:pr-8 mb-8 relative"
@@ -73,7 +73,7 @@ const AboutUsPage = () => {
           </div>
         </section>
 
-        <section className={`container mx-auto px-4 ${loading ? "hidden" : ""}`}>
+        <section className={`container mx-auto mb-16 px-4 ${loading ? "hidden" : ""}`}>
           <div className="flex flex-col md:flex-row items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-semibold mb-4">

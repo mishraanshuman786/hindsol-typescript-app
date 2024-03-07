@@ -33,7 +33,7 @@ function Career() {
       {/*The Content of the Career Page */}
 
       <div className={`container mx-auto ${loading ? "hidden" : ""}`}>
-        <header className="flex flex-col items-center relative mb-[500px]">
+        <header className="flex flex-col items-center relative md:mb-[300px] mb-[550px]">
           {/* Image container */}
           <motion.div
             className="h-[500px] w-full rounded-t-xl"

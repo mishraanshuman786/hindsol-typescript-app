@@ -14,7 +14,7 @@ function FAQs() {
       {/* accordian element */}
 
       <div className="container mt-5 mx-auto">
-        <h1 className="text-[40px]  font-bold text-blue-950 mt-16 mb-5">
+        <h1 className="text-[40px]  font-bold ml-3 text-blue-950 mt-16 mb-5">
           Frequently Asked Questions(FAQs)
         </h1>
         <div
@@ -360,7 +360,7 @@ function FAQs() {
             </div>
           </div>
         </div>
-        <h2 className="text-gray-800 mt-5 text-[20px] mb-10">
+        <h2 className="text-gray-800 mt-5 md:mx-2 mx-4 text-[20px] mb-10">
           <strong>
             If you have any other questions or need further assistance, please
             don&apos;t hesitate to reach out to us. We&apos;re here to help!

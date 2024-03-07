@@ -25,7 +25,7 @@ export default function Home() {
       <OurServices />
       <hr className="border border-gray-900 mx-10"/>
       <OurPortfolio />
-      <hr className="border border-gray-900 mx-10 mt-10"/>
+      <hr className="border border-gray-900 mx-10 mt-10 mb-14"/>
      <ReviewComponent />
       <hr className="border border-gray-900 mx-10"/>
       <FAQs/>

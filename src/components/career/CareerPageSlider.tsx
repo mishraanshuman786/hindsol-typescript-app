@@ -2,9 +2,9 @@ import React from "react";
 
 function HomepageSlider() {
   return (
-    <div className="pt-[40px]">
+    <div className="pt-[40px] ">
       <div className="container text-[25px]  md:text-[50px] font-bold">
-        <h2>
+        <h2 className="mx-4">
           <span className="text-green-400">Life</span> At HINDSOL
         </h2>
       </div>

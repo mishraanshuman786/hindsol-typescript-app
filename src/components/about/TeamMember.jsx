@@ -88,12 +88,13 @@ const TeamMember = () => {
   return (
     <div>
       <h1 className="text-center text-blue-800 font-semibold md:text-[40px] text-[28px]">Our Team</h1>
-    <div className="w-4/5 m-auto ">
-      <div className="mt-5 mb-20 ">
+      <hr className="border-t-2 w-[85%] md:mx-24 mx-auto mt-4 border-gray-300 mb-4"/>
+    <div className="w-4/5 m-auto">
+      <div className="mt-5 mb-20  ">
         <Slider {...settings} >
         {teamMember.map((element, index) => {
           return (
-          <div key={index} className="first bg-orange-200 h-[450px]  text-black rounded-xl">
+          <div key={index} className="first gap-4 bg-orange-200 h-[450px]  text-black rounded-xl">
             <div className="h-56 bg-indigo-500 flex justify-center items-center rounded-t-xl">
               <img src={element.image} className="w-44 h-44 rounded-full" />
             </div>
