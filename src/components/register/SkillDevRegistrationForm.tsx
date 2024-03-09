@@ -322,7 +322,7 @@ function SkillDevRegistrationForm() {
             {/* chech box */}
             <div>
               <label className="">
-                COURSES:<sup className="text-[20px]">*</sup>
+                PROGRAMS:<sup className="text-[20px]">*</sup>
               </label>
               <div className="flex items-center mb-4 mt-4">
                 <input
