@@ -3,7 +3,7 @@ import React from "react";
 function AddressComponent() {
   return (
     
-      <div className="md:w-[90%] flex flex-col items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      <div className="md:w-[90%] mx-3 flex flex-col items-center  bg-white border border-gray-200 rounded-lg shadow md:flex-row  hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
         <img
           className="object-cover md:w-[40%] w-auto rounded-t-lg h-[300px] md:rounded-none md:rounded-s-lg"
