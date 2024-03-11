@@ -1,6 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import React, { useState } from "react";
+import React, { useContext,useEffect, useState } from "react";
 import Image from "next/image";
 import { FaLaptopCode } from "react-icons/fa";
 import { TbDeviceMobileCode } from "react-icons/tb";
@@ -11,9 +11,10 @@ import { DiBrackets } from "react-icons/di";
 import { DiHtml53DEffects } from "react-icons/di";
 import { TbDeviceImacCode } from "react-icons/tb";
 import { FaCheckSquare } from "react-icons/fa";
-import PaymentCalculatorSubComponent from "@/components/PaymentCalculatorSubComponent";
+import PaymentCalculatorSubComponent from "@/components/PaymentCalculatorSubComponent.jsx";
 import FAQs from "@/components/FAQs";
 import { BiArrowToTop } from "react-icons/bi";
+import PriceContext from "@/library/context/PriceContext";
 
 function PriceCalculation() {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -28,6 +29,65 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
   const [basicApp,setBasicApp]=useState(false);
   const [refinedApp,setRefinedApp]=useState(false);
   const [scroll,setScroll]=useState(false);
+ 
+
+  const {totalPrice,setTotalPrice,webPrice,setWebPrice,mobilePrice,setMobilePrice} =useContext(PriceContext);
+
+  useEffect(()=>{
+    if(isDesktop)
+    {
+      setIOSClicked(false);
+      setAndroidClicked(false);
+      setMobilePrice(0);
+      
+    }
+    else{
+      setWebPrice(0);
+    }
+    calculatePrice();
+    
+  },[isAndroidClicked,isIOSClicked,mvpApp,basicApp,refinedApp]);
+
+  const calculatePrice = () => {
+    let totalPrice = 0;
+    console.log("calculate price called");
+    if (isDesktop) {
+      if (refinedApp) {
+        totalPrice += 63000; // Adjust prices as needed
+      } else if (basicApp) {
+        totalPrice += 39000;
+      } else if (mvpApp) {
+        totalPrice += 28000;
+      }
+      setWebPrice(totalPrice);
+    } else {
+      if (isIOSClicked && isAndroidClicked) {
+        if (refinedApp) {
+          totalPrice = totalPrice + 63000 * 2; // Adjust prices as needed
+        } else if (basicApp) {
+          totalPrice = totalPrice + 39000 * 2;
+        } else if (mvpApp) {
+          totalPrice = totalPrice + 28000 * 2;
+        }
+      } else if (isIOSClicked || isAndroidClicked) {
+        if (refinedApp) {
+          totalPrice += 63000; // Adjust prices as needed
+        } else if (basicApp) {
+          totalPrice += 39000;
+        } else if (mvpApp) {
+          totalPrice += 28000;
+        }
+      }
+      setMobilePrice(totalPrice);
+    }
+    console.log("price:", totalPrice);
+    console.log("refined state:",refinedApp)
+    setTotalPrice(totalPrice);
+  };
+
+ 
+
+  
  
 
   return (
@@ -110,32 +170,50 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                     </h3>
                     <div className="flex md:flex-row justify-center mx-auto flex-col pr-4 w-[80%] md:w-auto ">
                       <div
+                        onClick={()=>{
+                          setMvpApp(!mvpApp);
+                          setRefinedApp(false);
+                          setBasicApp(false);
+                         
+                        }}
                         title="App with Core functionality ,but without other side features."
                         className="border-gray-300 md:ml-16 mx-auto mt-6 flex items-center bg-gray-200 rounded justify-center w-72 h-36 md:h-32 border"
                       >
                         <div>
                           <DiBrackets className="text-[40px]" />
-                          <h3 className="text-[20px]">MVP</h3>
-                        </div>
-                      </div>
-
-                      <div
-                        title="App Core functionality + some side features that make addition to core functionality."
-                        className="border-gray-300 md:ml-16 mx-auto mt-6 flex  items-center bg-gray-200 rounded justify-center  w-72 h-36 md:h-32 border"
-                      >
-                        <div>
-                          <DiHtml5Multimedia className="text-[40px]" />
                           <h3 className="text-[20px]">Basic</h3>
                         </div>
                       </div>
 
                       <div
+                        onClick={()=>{
+                          setBasicApp(!basicApp);
+                          setMvpApp(false);
+                          setRefinedApp(false);
+                         
+                        }}
+                        title="App Core functionality + some side features that make addition to core functionality."
+                        className="border-gray-300 md:ml-16 mx-auto mt-6 flex  items-center bg-gray-200 rounded justify-center  w-72 h-36 md:h-32 border"
+                      >
+                        <div>
+                          <DiHtml5Multimedia className="text-[40px]" />
+                          <h3 className="text-[20px]">Standard</h3>
+                        </div>
+                      </div>
+
+                      <div
+                        onClick={()=>{
+                          setRefinedApp(!refinedApp);
+                          setMvpApp(false);
+                          setBasicApp(false);
+                         
+                        }}
                         title="Fully Build Application with all Core and Side Features. "
                         className="border-gray-300 md:ml-16 mx-auto mt-6 flex items-center bg-gray-200 rounded justify-center  w-72 h-36 md:h-32 border"
                       >
                         <div>
                           <DiHtml53DEffects className="text-[40px]" />
-                          <h3 className="text-[20px]"> Refined</h3>
+                          <h3 className="text-[20px]">Premium</h3>
                         </div>
                       </div>
                     </div>
@@ -186,9 +264,10 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                         <div className="flex md:flex-row flex-col  pr-4">
                           <div
                             onClick={()=>{
-                              setMvpApp(!mvpApp);
-                              setBasicApp(false);
-                              setRefinedApp(false);
+                               setMvpApp(!mvpApp);
+                               setBasicApp(false);
+                               setRefinedApp(false);
+                             
                             
                             }}
                             title="App with Core functionality ,but without other side features."
@@ -196,16 +275,16 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                           >
                             <div>
                               <DiBrackets className="text-[40px]" />
-                              <h3 className="text-[20px]">MVP</h3>
+                              <h3 className="text-[20px]">Basic</h3>
                             </div>
                           </div>
 
                           <div
                            onClick={()=>{
-                            setBasicApp(!basicApp);
-                            setMvpApp(false);
-                            setRefinedApp(false);
-                           
+                             setBasicApp(!basicApp);
+                             setMvpApp(false);
+                             setRefinedApp(false);
+                            
                           }
                           }
                             title="App Core functionality + some side features that make addition to core functionality."
@@ -213,16 +292,16 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                           >
                             <div>
                               <DiHtml5Multimedia className="text-[40px]" />
-                              <h3 className="text-[20px]">Basic</h3>
+                              <h3 className="text-[20px]">Standard</h3>
                             </div>
                           </div>
 
                           <div
                            onClick={()=>{
-                            setRefinedApp(!refinedApp);
-                            setMvpApp(false);
-                            setBasicApp(false);
-                          
+                             setRefinedApp(!refinedApp);
+                             setMvpApp(false);
+                             setBasicApp(false);
+                            
                            }
                           }
                             title="Fully Build Application with all Core and Side Features. "
@@ -230,13 +309,13 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                           >
                             <div>
                               <DiHtml53DEffects className="text-[40px]" />
-                              <h3 className="text-[20px]"> Refined</h3>
+                              <h3 className="text-[20px]">Premium</h3>
                             </div>
                           </div>
                         </div>
                        {/* addition div */}
                        {(basicApp||mvpApp||refinedApp)?(
-                        <PaymentCalculatorSubComponent/>
+                        <PaymentCalculatorSubComponent  />
                        ):null}
                      
                       </div>
@@ -259,7 +338,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
 
                     <h3 className="m-2 text-[18px]">NOTHING TO CALCULATE</h3>
                   </div>
-                  <h3 className="text-[28px] ml-4">$0</h3>
+                  <h3 className="text-[28px] ml-4">${webPrice}</h3>
                 </div>
 
                 {/* second div */}
@@ -267,12 +346,12 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                   <div className="flex justify-between">
                     <div className="flex items-center m-2">
                       <TbDeviceMobileCode className="text-[25px]" />
-                      <h3 className="text-[18px]">WEB</h3>
+                      <h3 className="text-[18px]">Mobile</h3>
                     </div>
 
                     <h3 className="m-2 text-[18px]">NOTHING TO CALCULATE</h3>
                   </div>
-                  <h3 className="text-[28px] ml-4">$0</h3>
+                  <h3 className="text-[28px] ml-4">${mobilePrice}</h3>
                 </div>
 
                 {/* third div */}
@@ -288,7 +367,7 @@ const [isSubCategoryClicked,setIsSubcategoryClicked]=useState(false);
                     <BiArrowToTop className="text-black text-[35px]" />
                     </div>
                   </div>
-                  <h3 className="text-[35px] font-semibold ml-2">$0</h3>
+                  <h3 className="text-[35px] font-semibold ml-2">${totalPrice}</h3>
                 </div>
 
                 <hr className="mx-4 mt-6" />

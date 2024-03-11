@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import PriceContextProvider from "../library/context/PriceContextProvider";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,7 +34,9 @@ export default function RootLayout({
           {/* Add more social media links/icons as needed */}
         </div>
         {/* Main content */}
+        <PriceContextProvider>
         {children}
+        </PriceContextProvider>
       </body>
     </html>
   );

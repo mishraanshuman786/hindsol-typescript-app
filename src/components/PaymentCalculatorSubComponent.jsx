@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext ,useState } from "react";
+import PriceContext from "@/library/context/PriceContext";
 import { DiAndroid } from "react-icons/di";
 import { FaApple } from "react-icons/fa";
 import { FaCheckSquare } from "react-icons/fa";
@@ -38,53 +39,86 @@ import { PiPhoneCallBold } from "react-icons/pi";
 
 
 
-
 function PaymentCalculatorSubComponent() {
+
+  const {totalPrice,setTotalPrice,webPrice,setWebPrice,mobilePrice,setMobilePrice} =useContext(PriceContext);
+
   // ios clicked
   const [isIOSClicked, setIOSClicked] = useState(false);
   // android clicked
   const [isAndroidClicked, setAndroidClicked] = useState(false);
   // features selected
-  const [features,setFeatures]=useState({
-    ecommerce:false,
-    logistics:false,
-    healthcare:false,
-    education:false,
-    custom:false,
-    emailSignup:false,
-    facebookSignup:false,
-    googleSignup:false,
-    multilanguage:false,
-   invitationEmails:false,
-   dashboard:false,
-   mediaUploading:false,
-   sendingEmail:false,
-   userInteractions:false,
-   audioVideoProcessing:false,
-   searchingAndFiltering:false,
-   geolocation:false,
-   workingWithMaps:false,
-   locationTracking:false,
-   scheduling:false,
-   bookings:false,
-   chat:false,
-   commentsAndReviews:false,
-   dataExchange:false,
-   pushNotifications:false,
-   cart:false,
-   inAppPurchasing:false,
-   paymentProcessing:false,
-   subscriptions:false,
-   inAppMarketplace:false,
-   productManagement:false,
-   adminPanel:false,
-   analytics:false,
-   performanceMonitoring:false,
-   thirdPartyIntegration:false,
-   openApi:false,
-   sms:false,
-   audioVideoCalls:false
+  const [features, setFeatures] = useState({
+    ecommerce: { active: false, amount: 12000 },
+    logistics: { active: false, amount: 8000 },
+    healthcare: { active: false, amount: 10000 },
+    education: { active: false, amount: 7000 },
+    custom: { active: false, amount: 15000 },
+    emailSignup: { active: false, amount: 2000 },
+    facebookSignup: { active: false, amount: 2000 },
+    googleSignup: { active: false, amount: 2000 },
+    multilanguage: { active: false, amount: 4000 },
+    invitationEmails: { active: false, amount: 1000 },
+    dashboard: { active: false, amount: 12000 },
+    mediaUploading: { active: false, amount: 3000 },
+    sendingEmail: { active: false, amount: 1000 },
+    userInteractions: { active: false, amount: 2500 },
+    audioVideoProcessing: { active: false, amount: 8000 },
+    searchingAndFiltering: { active: false, amount: 3000 },
+    geolocation: { active: false, amount: 3000 },
+    workingWithMaps: { active: false, amount: 4000 },
+    locationTracking: { active: false, amount: 6000 },
+    scheduling: { active: false, amount: 6000 },
+    bookings: { active: false, amount: 4000 },
+    chat: { active: false, amount: 14000 },
+    commentsAndReviews: { active: false, amount: 4000 },
+    dataExchange: { active: false, amount: 1000 },
+    pushNotifications: { active: false, amount: 4000 },
+    cart: { active: false, amount: 3000 },
+    inAppPurchasing: { active: false, amount: 3000 },
+    paymentProcessing: { active: false, amount: 8000 },
+    subscriptions: { active: false, amount: 1000 },
+    inAppMarketplace: { active: false, amount: 15000 },
+    productManagement: { active: false, amount: 8000 },
+    adminPanel: { active: false, amount: 2000 },
+    analytics: { active: false, amount: 2000 },
+    performanceMonitoring: { active: false, amount: 1000 },
+    thirdPartyIntegration: { active: false, amount: 2000 },
+    openApi: { active: false, amount: 2000 },
+    sms: { active: false, amount: 3000 },
+    audioVideoCalls: { active: false, amount: 3000 }
   });
+
+  const [totalAmount, setTotalAmount] = useState(0);
+
+  const toggleFeature = (key) => {
+   setFeatures((prev) => {
+      const newFeatures = { ...prev };
+      newFeatures[key] = { ...prev[key], active: !prev[key].active };
+  
+     
+  
+      return newFeatures;
+    });
+
+   
+     // Deduct the amount if the feature is becoming inactive
+     if (features[key].active) {
+      setTotalPrice((prevTotalPrice) => prevTotalPrice - features[key].amount);
+    } else {
+      // Add the amount if the feature is becoming active
+      setTotalPrice((prevTotalPrice) => prevTotalPrice + features[key].amount);
+    }
+
+  };
+  
+
+  
+
+
+
+  console.log(features.ecommerce.active);
+  console.log("totalstate:", totalAmount);
 
   return (
     <div>
@@ -93,15 +127,15 @@ function PaymentCalculatorSubComponent() {
          App Field
         </h3>
         <div>
-        <div className="flex justify-center">
+        <div className="flex md:flex-row items-center flex-col  ">
           <div
-            onClick={() => setFeatures((prev)=>({...prev,ecommerce:!features.ecommerce}))}
+           onClick={() => toggleFeature("ecommerce")}
             className={`border-2  ${
-              features.ecommerce ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.ecommerce.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.ecommerce ? (
+              {features.ecommerce.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
              
@@ -110,13 +144,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,logistics:!features.logistics}))}
+           onClick={() => toggleFeature("logistics")}
             className={`border-2  ${
-              features.logistics ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.logistics.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.logistics ? (
+              {features.logistics.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
             <LuTruck className='mx-auto text-[40px]' />
@@ -126,15 +160,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-            onClick={() => setFeatures((prev)=>({...prev,healthcare:!features.healthcare}))}
+            onClick={() => toggleFeature("healthcare")}
             className={`border-2  ${
-             features.healthcare ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+             features.healthcare.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.healthcare ? (
+              {features.healthcare.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
             <MdOutlineHealthAndSafety className="mx-auto text-[40px]" />
@@ -142,13 +176,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-            onClick={() => setFeatures((prev)=>({...prev,education:!features.education}))}
+            onClick={() => toggleFeature("education")}
             className={`border-2  ${
-              features.education ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.education.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.education ? (
+              {features.education.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
              <GiGraduateCap className="mx-auto text-[40px]"/>
@@ -157,13 +191,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,custom:!features.custom}))}
+           onClick={() => toggleFeature("custom")}
             className={`border-2  ${
-              features.custom ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.custom.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.custom ? (
+              {features.custom.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
           <FaTools className="text-[40px] mx-auto" />
@@ -180,15 +214,15 @@ function PaymentCalculatorSubComponent() {
          Users And Accounts
         </h3>
         <div>
-        <div className="flex ">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,emailSignup:!features.emailSignup}))}
+           onClick={() => toggleFeature("emailSignup")}
             className={`border-2  ${
-             features.emailSignup ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+             features.emailSignup.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.emailSignup? (
+              {features.emailSignup.active? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
              
@@ -197,13 +231,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-            onClick={() => setFeatures((prev)=>({...prev,facebookSignup:!features.facebookSignup}))}
+            onClick={() => toggleFeature("facebookSignup")}
             className={`border-2  ${
-              features.facebookSignup ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.facebookSignup.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.facebookSignup ? (
+              {features.facebookSignup.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
            <SiFacebook  className="mx-auto text-[40px]"/>
@@ -214,15 +248,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,googleSignup:!features.googleSignup}))}
+           onClick={() => toggleFeature("googleSignup")}
             className={`border-2  ${
-              features.googleSignup ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.googleSignup.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.googleSignup ? (
+              {features.googleSignup.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
            <FaGooglePlus className="mx-auto text-[40px]" />
@@ -230,13 +264,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-          onClick={() => setFeatures((prev)=>({...prev,multilanguage:!features.multilanguage}))}
+          onClick={() => toggleFeature("multilanguage")}
             className={`border-2  ${
-              features.multilanguage ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.multilanguage.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.multilanguage ? (
+              {features.multilanguage.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
              <IoLanguage className="mx-auto text-[40px]" />
@@ -245,13 +279,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,invitationEmails:!features.invitationEmails}))}
+           onClick={() => toggleFeature("invitationEmails")}
             className={`border-2  ${
-              features.invitationEmails ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.invitationEmails.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.invitationEmails ? (
+              {features.invitationEmails.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
           <SiGmail className="mx-auto text-[40px]" />
@@ -268,15 +302,15 @@ function PaymentCalculatorSubComponent() {
          App Content
         </h3>
         <div>
-        <div className="flex ">
+        <div className="flex md:flex-row items-center flex-col ">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,dashboard:!features.dashboard}))}
+           onClick={() => toggleFeature("dashboard")}
             className={`border-2  ${
-              features.dashboard ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.dashboard.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.dashboard ? (
+              {features.dashboard.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
              
@@ -285,13 +319,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-            onClick={() => setFeatures((prev)=>({...prev,mediaUploading:!features.mediaUploading}))}
+           onClick={() => toggleFeature("mediaUploading")}
             className={`border-2  ${
-              features.mediaUploading ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.mediaUploading.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.mediaUploading ? (
+              {features.mediaUploading.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
           <PiVideoFill className="text-[40px] mx-auto" />
@@ -299,13 +333,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,sendingEmail:!features.sendingEmail}))}
+           onClick={() => toggleFeature("sendingEmail")}
             className={`border-2  ${
-              features.sendingEmail ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.sendingEmail.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.sendingEmail ? (
+              {features.sendingEmail.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
              <SiGmail className="mx-auto text-[40px]" />
@@ -315,15 +349,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,userInteractions:!features.userInteractions}))}
+           onClick={() => toggleFeature("userInteractions")}
             className={`border-2  ${
-              features.userInteractions ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.userInteractions.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.userInteractions ? (
+              {features.userInteractions.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
            <MdSettingsInputComposite className="text-[40px] mx-auto" />
@@ -331,13 +365,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-          onClick={() => setFeatures((prev)=>({...prev,audioVideoProcessing:!features.audioVideoProcessing}))}
+          onClick={() => toggleFeature("audioVideoProcessing")}
             className={`border-2  ${
-              features.audioVideoProcessing ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.audioVideoProcessing.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.audioVideoProcessing ? (
+              {features.audioVideoProcessing.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
           <PiFileVideoFill className="mx-auto text-[40px]"/>
@@ -346,13 +380,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,searchingAndFiltering:!features.searchingAndFiltering}))}
+          onClick={() => toggleFeature("searchingAndFiltering")}
             className={`border-2  ${
-              features.searchingAndFiltering ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.searchingAndFiltering.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.searchingAndFiltering ? (
+              {features.searchingAndFiltering.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
           <TbFilterSearch className="mx-auto text-[40px]"/>
@@ -369,15 +403,15 @@ function PaymentCalculatorSubComponent() {
          GEOLOCATION
         </h3>
         <div>
-        <div className="flex w-full ">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,geolocation:!features.geolocation}))}
+           onClick={() => toggleFeature("geolocation")}
             className={`border-2  ${
-              features.geolocation ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.geolocation.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.geolocation ? (
+              {features.geolocation.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
            <FaMapLocationDot className="text-[40px] mx-auto"/>
@@ -387,15 +421,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,workingWithMaps:!features.workingWithMaps}))}
+          onClick={() => toggleFeature("workingWithMaps")}
             className={`border-2  ${
-              features.workingWithMaps ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.workingWithMaps.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.workingWithMaps ? (
+              {features.workingWithMaps.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
             <TbMapStar className="mx-auto text-[40px]"/>
@@ -404,13 +438,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-          onClick={() => setFeatures((prev)=>({...prev,locationTracking:!features.locationTracking}))}
+          onClick={() => toggleFeature("locationTracking")}
             className={`border-2  ${
-              features.locationTracking ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.locationTracking.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.locationTracking ? (
+              {features.locationTracking.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
          <FaMagnifyingGlassLocation className="text-[40px] mx-auto"/>
@@ -427,15 +461,15 @@ function PaymentCalculatorSubComponent() {
          SCHEDULING / BOOKINGS
         </h3>
         <div>
-        <div className="flex w-full ">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,scheduling:!features.scheduling}))}
+          onClick={() => toggleFeature("scheduling")}
             className={`border-2  ${
-              features.scheduling ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.scheduling.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.scheduling ? (
+              {features.scheduling.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
            <GrSchedule className="text-[40px] mx-auto"/>
@@ -443,13 +477,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,bookings:!features.bookings}))}
+           onClick={() => toggleFeature("bookings")}
             className={`border-2  ${
-              features.bookings ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.bookings.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.bookings ? (
+              {features.bookings.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
            <FaSwatchbook className="text-[40px] mx-auto"/>
@@ -466,15 +500,15 @@ function PaymentCalculatorSubComponent() {
         USER INTERACTIONS
         </h3>
         <div>
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,chat:!features.chat}))}
+           onClick={() => toggleFeature("chat")}
             className={`border-2  ${
-              features.chat ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.chat.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.chat ? (
+              {features.chat.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
              
@@ -482,14 +516,13 @@ function PaymentCalculatorSubComponent() {
               <h3>Chat</h3>
             </div>
           </div>
-          <div
-           onClick={() => setFeatures((prev)=>({...prev,commentsAndReviews:!features.commentsAndReviews}))}
+          <div onClick={() => toggleFeature("commentsAndReviews")}
             className={`border-2  ${
-              features.commentsAndReviews ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.commentsAndReviews.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.commentsAndReviews ? (
+              {features.commentsAndReviews.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
            <LiaCommentsSolid className="text-[40px] mx-auto"/>
@@ -500,15 +533,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,dataExchange:!features.dataExchange}))}
+          onClick={() => toggleFeature("dataExchange")}
             className={`border-2  ${
-              features.dataExchange ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.dataExchange.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.dataExchange ? (
+              {features.dataExchange.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
          <GiCardExchange className="text-[40px] mx-auto"/>
@@ -516,13 +549,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,pushNotifications:!features.pushNotifications}))}
+           onClick={() => toggleFeature("pushNotifications")}
             className={`border-2  ${
-             features.pushNotifications ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+             features.pushNotifications.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.pushNotifications ? (
+              {features.pushNotifications.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
              <FaPushed className="text-[40px] mx-auto"/>
@@ -541,15 +574,15 @@ function PaymentCalculatorSubComponent() {
        ECOMMERCE
         </h3>
         <div>
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,cart:!features.cart}))}
+           onClick={() => toggleFeature("cart")}
             className={`border-2  ${
-              features.cart ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.cart.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.cart ? (
+              {features.cart.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
              
@@ -558,13 +591,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-            onClick={() => setFeatures((prev)=>({...prev,inAppPurchasing:!features.inAppPurchasing}))}
+            onClick={() => toggleFeature("inAppPurchasing")}
             className={`border-2  ${
-              features.inAppPurchasing ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.inAppPurchasing.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.inAppPurchasing ? (
+              {features.inAppPurchasing.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
            <SiAppstore className="text-[40px] mx-auto"/>
@@ -575,15 +608,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-            onClick={() => setFeatures((prev)=>({...prev,paymentProcessing:!features.paymentProcessing}))}
+            onClick={() => toggleFeature("paymentProcessing")}
             className={`border-2  ${
-             features.paymentProcessing ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+             features.paymentProcessing.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.paymentProcessing ? (
+              {features.paymentProcessing.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
             <SiPaytm className="mx-auto text-[40px]"/>
@@ -591,13 +624,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,subscriptions:!features.subscriptions}))}
+           onClick={() => toggleFeature("subscriptions")}
             className={`border-2  ${
-              features.subscriptions ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.subscriptions.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.subscriptions ? (
+              {features.subscriptions.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
              <GiGraduateCap className="mx-auto text-[40px]"/>
@@ -609,15 +642,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
             {/* third row */}
-            <div className="flex  justify-center">
+            <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,inAppMarketplace:!features.inAppMarketplace}))}
+           onClick={() => toggleFeature("inAppMarketplace")}
             className={`border-2  ${
-              features.inAppMarketplace ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.inAppMarketplace.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.inAppMarketplace ? (
+              {features.inAppMarketplace.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
             <MdOutlineHealthAndSafety className="mx-auto text-[40px]" />
@@ -625,13 +658,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,productManagement:!features.productManagement}))}
+          onClick={() => toggleFeature("productManagement")}
             className={`border-2  ${
-             features.productManagement ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+             features.productManagement.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.productManagement ? (
+              {features.productManagement.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
              <GiGraduateCap className="mx-auto text-[40px]"/>
@@ -650,15 +683,15 @@ function PaymentCalculatorSubComponent() {
          ADMIN, FEEDBACK & ANALYTICS
         </h3>
         <div>
-        <div className="flex w-full ">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,adminPanel:!features.adminPanel}))}
+           onClick={() => toggleFeature("adminPanel")}
             className={`border-2  ${
-             features.adminPanel? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+             features.adminPanel.active? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.adminPanel ? (
+              {features.adminPanel.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
          <MdAdminPanelSettings className="text-[40px] mx-auto" />
@@ -668,15 +701,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex md:flex-row  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,analytics:!features.analytics}))}
+           onClick={() => toggleFeature("analytics")}
             className={`border-2  ${
-              features.analytics ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+              features.analytics.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.analytics ? (
+              {features.analytics.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
             <SiGoogleanalytics className="text-[40px] mx-auto"/>
@@ -685,13 +718,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,performanceMonitoring:!features.performanceMonitoring}))}
+           onClick={() => toggleFeature("performanceMonitoring")}
             className={`border-2  ${
-              features.performanceMonitoring ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-72 md:h-32 border`}
+              features.performanceMonitoring.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.performanceMonitoring ? (
+              {features.performanceMonitoring.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
          <GrDocumentPerformance className="mx-auto text-[40px]"/>
@@ -708,15 +741,15 @@ function PaymentCalculatorSubComponent() {
         EXTERNAL APIS AND INTEGRATIONS
         </h3>
         <div>
-        <div className="flex justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,thirdPartyIntegration:!features.thirdPartyIntegration}))}
+          onClick={() => toggleFeature("thirdPartyIntegration")}
             className={`border-2  ${
-              features.thirdPartyIntegration ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.thirdPartyIntegration.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.thirdPartyIntegration ? (
+              {features.thirdPartyIntegration.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
              
@@ -725,13 +758,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-           onClick={() => setFeatures((prev)=>({...prev,openApi:!features.openApi}))}
+          onClick={() => toggleFeature("openApi")}
             className={`border-2  ${
-              features.openApi ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.openApi.active ? "border-blue-800" : "border-gray-300"
+            } md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.openApi ? (
+              {features.openApi.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
             <RiOpenaiFill className="text-[40px] mx-auto"/>
@@ -742,15 +775,15 @@ function PaymentCalculatorSubComponent() {
         </div>
 
         {/* second row */}
-        <div className="flex  justify-center">
+        <div className="flex md:flex-row items-center flex-col">
           <div
-           onClick={() => setFeatures((prev)=>({...prev,sms:!features.sms}))}
+           onClick={() => toggleFeature("sms")}
             className={`border-2  ${
-              features.sms ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.sms.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.sms ? (
+              {features.sms.active ? (
                 <FaCheckSquare className="text-blue-800 absolute " />
               ) : null}
               <LiaCommentsSolid className="text-[40px] mx-auto"/>
@@ -758,13 +791,13 @@ function PaymentCalculatorSubComponent() {
             </div>
           </div>
           <div
-          onClick={() => setFeatures((prev)=>({...prev,audioVideoCalls:!features.audioVideoCalls}))}
+          onClick={() => toggleFeature("audioVideoCalls")}
             className={`border-2  ${
-              features.audioVideoCalls ? "border-blue-800" : "border-gray-300"
-            } ml-16 mt-12 flex items-center bg-gray-200 rounded justify-center  md:w-full md:h-32 border`}
+              features.audioVideoCalls.active ? "border-blue-800" : "border-gray-300"
+            }  md:ml-16 mt-12 flex items-center mx-auto bg-gray-200 rounded justify-center  md:w-72 w-[80%] md:h-32 h-36 border`}
           >
             <div>
-              {features.audioVideoCalls ? (
+              {features.audioVideoCalls.active ? (
                 <FaCheckSquare className="text-blue-800 " />
               ) : null}
            <PiPhoneCallBold className="text-[40px] mx-auto" />
