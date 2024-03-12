@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react";
 import "./globals.css";
-import HomeBanner from "@/components/homepage/HomepageSlider";
+import HomepageSlider from "@/components/homepage/HomepageSlider";
 import ServicesComponent from "@/components/homepage/ServicesComponent";
 import OurServices from "@/components/homepage/OurServices";
 import OurPortfolio from "@/components/homepage/OurPortfolio";
@@ -11,6 +11,7 @@ import FAQs from "@/components/FAQs";
 import ReviewComponent from "@/components/homepage/ReviewComponent";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Navbar from "@/components/Navbar";
 
 
 
@@ -44,9 +45,12 @@ export default function Home() {
 
   return (
     <div>
+    
+        <Navbar />
+     
       {/* Header */}
       <div data-aos="zoom-out">
-      <HomeBanner />
+      <HomepageSlider />
       </div>
       {/* Section para */}
       <h1 className="text-[40px] text-blue-900 font-semibold text-center mt-[80px] mb-5">

@@ -43,7 +43,7 @@ export function OurPortfolio() {
               }}
               onMouseLeave={() => {
                 setIsHovered(false);
-                setImage("/homepage-portfolio/image8.jpg");
+                setImage("/homepage-portfolio/image2.jpg");
               }}
             >
               {/* {element} {index + 1} */}

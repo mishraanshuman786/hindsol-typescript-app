@@ -14,7 +14,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav className="bg-white  border-b-blue-500 border-b-4 sticky mb-10 w-full top-0 z-[500] border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="#"
