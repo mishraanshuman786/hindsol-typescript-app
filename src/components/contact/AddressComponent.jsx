@@ -18,14 +18,22 @@ function AddressComponent() {
            
            <strong>E-mail: </strong>info@hindsol.com<br/>
            <strong>Contact No: </strong>6363777534, 0542-2971879
-
+           
+           
+           <div className="flex">
+           <strong className="mr-2">office: </strong> 
+            <div>Varanasi</div><div className="border-r-2 h-4 my-1 border-gray-500 mx-2"></div>
+            <div>Bangalore</div><div className="border-r-2 h-4 my-1 border-gray-500 mx-2"></div>
+            <div>Pune</div><div className="border-r-2 h-4 my-1 border-gray-500 mx-2"></div>
+            <div>Delhi</div>
+           </div>
            
           
           </p>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          <strong>Head office:</strong> Siswan, Babatpur, Front of Raj College of Management, Varanasi, (U.P.) 221006<br/>
+          {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+           Siswan, Babatpur, Front of Raj College of Management, Varanasi, (U.P.) 221006<br/>
            <strong>Corporate office: </strong> Plot No. 45- 47, First Main Rd, Phase 2, Electronic City, Bengaluru, Karnataka 560100  
-           </p>
+           </p> */}
           
         </div>
       </div>
